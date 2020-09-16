@@ -13,6 +13,8 @@ class Restaurant(models.Model):
     class Meta:
         verbose_name = 'Restaurante'
         verbose_name_plural = 'Restaurantes'
+    def __str__(self):
+        return self.name
 
 
 class Menu(models.Model):
@@ -21,6 +23,8 @@ class Menu(models.Model):
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
         auto_now=True, verbose_name='Última actualización')
+    def __str__(self):
+        return self.name
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50, verbose_name='Nombre de Categoría')
@@ -28,6 +32,8 @@ class Category(models.Model):
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
         auto_now=True, verbose_name='Última actualización')
+    def __str__(self):
+        return self.name
 
 class MenuDetail(models.Model):
     menu = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Menú')
@@ -39,4 +45,6 @@ class MenuDetail(models.Model):
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
         auto_now=True, verbose_name='Última actualización')
+    def __str__(self):
+        return self.name
     
