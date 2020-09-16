@@ -18,4 +18,5 @@ class TacontentoView(TemplateView):
 
 def index(request):
     first = Restaurant.objects.values_list('name', flat=True)
+    print(list(first))
     return render(request, 'general/index.html', {'all': first})
