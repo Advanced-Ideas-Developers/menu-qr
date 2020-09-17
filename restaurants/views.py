@@ -17,6 +17,5 @@ class TacontentoView(TemplateView):
 # Soy un rebelde que usa funciones en lugar de clases osi
 
 def index(request):
-    first = Restaurant.objects.values_list('name', flat=True)
-    print(list(first))
+    first = Restaurant.objects.values('name', 'foto_restaurante', 'foto_portada')
     return render(request, 'general/index.html', {'all': first})
