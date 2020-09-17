@@ -1,5 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Esteban&display=swap');
 
-*{
-    font-family: 'Montserrat';
+body{
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+p{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.menu-section{
+    display: flex;
+    background-color: #00CDC1;
+    padding: 2rem 6rem;
+    column-gap: 8rem;
+}
+
+.menu-section p{
+    text-align: justify;
+    line-height: 1.8rem;
+}
+
+.menu-section h2{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.menu-section .AID{
+    color: #fff;
+}
+
+.menu-section img{
+    width: 34rem;
+}
+
+.center-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restaurants-section{
+    padding: 3rem 8.5rem;
+    background-color: #fff;
+}
+
+.prices-section{
+    padding: 3rem 8.5rem;
+    background-color: #F9F9F9;
+}
+
+.restaurants-section>h2, .restaurants-section>p,
+.prices-section>h2 , .prices-section>p{
+    text-align: center;
+}
+
+.restaurants-section h2, .prices-section h2{
+    font-size: 1.8rem;
+}
+
+.restaurants-article h2{
+    font-weight: 500;
+    color: #232323;
+    font-size: 1.875rem;
+}
+
+.restaurants-article img{
+    max-width: 100%;
+}
+
+.restaurants-article{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 3rem;
+    margin-top: 2.6rem;
+}
+@media(max-width:680px){
+    .menu-section {
+        padding: 2rem;
+        row-gap: 3rem;
+        flex-direction: column;
+    }
+
+    .menu-section img {
+        width: 21rem;
+    }
+
+    .menu-section p {
+        line-height: 1.9rem;
+        font-size: 1.2rem;
+    }
+
+    .restaurants-article {
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 3rem;
+        margin-top: 1.5rem;
+    }
+    
+    .restaurants-section, .prices-section {
+        padding: 2rem;
+    }
+    .restaurants-section>p, .prices-section p{
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+    }
 }

@@ -1,8 +1,8 @@
 {% include "general/header.html" %}
 
-    <div>
+    <section class="menu-section">
         <div>
-            <h2>QR Menu AID, <br> Para Restayrantes y <br> bares </h2>
+            <h2>QR Menu, <br> <span class="AID">AID</span> <br> Para Restaurantes y <br> bares </h2>
         
             <p>
                 Utiliza en tu local el código QR para ayudar a contener la propagación de COVID-19. <br>
@@ -10,27 +10,62 @@
                 necesidad de instalar ninguna APP en sus teléfonos móviles
             </p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="center-image">
+            <img src="/media/media/menu-qr.jpg" alt="">
         </div>
-    </div>
-
-    <h2>Ejemplos</h2>
-    <hr>
-    <p>
-        En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu. <br>
-        Escanear los códigos QR que aparecen en las fotos.
-    </p>
-
-    <div>
-        
-        {% for i in all %}
-            <div>
-                <h2>{{i.name}}</h2>
-                <img src="media/{{i.foto_portada}}" alt="">
-            </div>
-        {% endfor %}
-    </div>
+    </section>
+    <section class="prices-section">
+        <h2>NUESTROS PRECIOS</h2>
+        <p>
+            En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu. <br>
+            Escanear los códigos QR que aparecen en las fotos.
+        </p>
+    
+        <article class="restaurants-article">
+            
+            {% for i in all %}
+                <section>
+                    <h2>{{i.name}}</h2>
+                    <img src="media/{{i.foto_restaurante}}" alt="">
+                </section>
+                <section>
+                    <h2>{{i.name}}</h2>
+                    <img src="media/{{i.foto_restaurante}}" alt="">
+                </section>
+                <section>
+                    <h2>{{i.name}}</h2>
+                    <img src="media/{{i.foto_restaurante}}" alt="">
+                </section>
+            {% endfor %}
+            
+        </article>
+    </section>
+    <section class="restaurants-section">
+        <h2>EJEMPLOS</h2>
+        <p>
+            En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu. <br>
+            Escanear los códigos QR que aparecen en las fotos.
+        </p>
+    
+        <article class="restaurants-article">
+            
+            {% for i in all %}
+                <section>
+                    <h2>{{i.name}}</h2>
+                    <img src="media/{{i.foto_restaurante}}" alt="">
+                </section>
+                <section>
+                    <h2>{{i.name}}</h2>
+                    <img src="media/{{i.foto_restaurante}}" alt="">
+                </section>
+                <section>
+                    <h2>{{i.name}}</h2>
+                    <img src="media/{{i.foto_restaurante}}" alt="">
+                </section>
+            {% endfor %}
+            
+        </article>
+    </section>
 
 </body>
 </html>

@@ -7,6 +7,7 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre')
     foto_restaurante = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
     foto_portada = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
+    foto_qr = models.ImageField(upload_to="media/", default='path/to/my/default/image.jpg')
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
