@@ -9,7 +9,7 @@ h1,h2,h3,h4,h5{
     font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
 
-p{
+p, li{
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
@@ -79,6 +79,49 @@ p{
     column-gap: 3rem;
     margin-top: 2.6rem;
 }
+
+.plans-titles{
+    /* background-color: #D1840A; */
+    background-color: #FF9500;
+    text-align: center;
+    padding: 1rem;
+}
+
+.plans-titles h3{
+    text-transform: uppercase;
+}
+
+.plans-titles h3, .plans-titles h2{
+    color: white;
+}
+
+.plans-titles h2{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.little-part{
+    font-size: 1rem;
+}
+
+.plans-article{
+    margin-top: 4.8rem;
+}
+
+.plans-article ul li {
+    list-style: none;
+}
+
+.plans-article ul {
+    padding: 0;
+    text-align: center;
+    line-height: 3rem;
+    border: 1px solid #E4E4E4;
+    padding-top: 2.1rem;
+    margin-top: 0rem;
+    padding-bottom: 2.1rem;
+}
+
 @media(max-width:680px){
     .menu-section {
         padding: 2rem;
@@ -108,5 +151,9 @@ p{
     .restaurants-section>p, .prices-section p{
         font-size: 1.2rem;
         line-height: 1.9rem;
+    }
+
+    .plans-article{
+        margin-top: 2.1rem;
     }
 }

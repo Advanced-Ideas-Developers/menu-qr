@@ -17,28 +17,32 @@
     <section class="prices-section">
         <h2>NUESTROS PRECIOS</h2>
         <p>
-            En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu. <br>
-            Escanear los códigos QR que aparecen en las fotos.
+            Debido a la situación actual, los restaurantes y bares necesitan una solución de menús que no incluyan el contacto que ayuden <br> a frenar la propagación del COVID-19. El Menú QR representa una solución accesible y profesional.
         </p>
     
-        <article class="restaurants-article">
-            
-            {% for i in all %}
-                <section>
-                    <h2>{{i.name}}</h2>
-                    <img src="media/{{i.foto_restaurante}}" alt="">
-                </section>
-                <section>
-                    <h2>{{i.name}}</h2>
-                    <img src="media/{{i.foto_restaurante}}" alt="">
-                </section>
-                <section>
-                    <h2>{{i.name}}</h2>
-                    <img src="media/{{i.foto_restaurante}}" alt="">
-                </section>
+        <article class="restaurants-article plans-article" >
+            {% for i in planes %}
+            <section>
+                <div class="plans-titles">
+                    <h3>{{i.name}}</h3>
+                    <h2>${{i.price}} <span class="little-part">/ Año</span></h2>
+                </div>
+                    <ul>
+                        {% for n in detalles %}
+                            {% if n.plan_id.name == i.name %}
+                                <li>
+                                    {{n}}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+            </section>
+                    
             {% endfor %}
-            
         </article>
+        
+        
+            
     </section>
     <section class="restaurants-section">
         <h2>EJEMPLOS</h2>
