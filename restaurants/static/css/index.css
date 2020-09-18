@@ -158,6 +158,34 @@ p, li{
     border-radius: 50%;
 }
 
+.ejemplos-section{
+    padding: 3rem 8.5rem 5rem 8.5rem;
+}
+
+.article-paralax{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 8.5rem;
+    background-image: url('/media/media/cena_elegante.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    color: white;
+    row-gap: 2.1rem;
+    text-align: center;
+}
+
+.article-paralax h3{
+    font-size: 1.5rem;
+}
+
+.hr-final{
+    border: 1px solid #E7E7E7;
+}
+
 @media(max-width:680px){
     .menu-section {
         padding: 2rem;
