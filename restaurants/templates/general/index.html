@@ -14,6 +14,94 @@
             <img src="/media/media/menu-qr.jpg" alt="">
         </div>
     </section>
+    <section class="restaurants-section">
+        <h2>CARACTERÍSTICAS</h2>
+        <p>
+            ¡Luchá contra el COVID-19 con nuestros menús digitales!
+        </p>
+    
+        <article class="features-article">
+            <div class="center-image">
+                <img class="image-stop" src="/media/media/stop-covid.jpg" alt="">
+            </div>
+            <div>
+                <h2>Menú QR</h2>
+                <h2>Plataforma para menús virtuales</h2>
+                <p>
+                    El elemento mas reutilizable de restaurantes 
+                    y bares es el menú. Desafortunadamente, en algunas 
+                    ocasiones se imposibiliza desinfectar el menú impreso 
+                    luego de cada uso. La solución, un Menú Virtual, a través
+                    de un teléfono móvil. El cliente tendrá que escanear un código
+                    QR con su dispositivo y verá el menú en su pantalla sin tener
+                    que descargar ninguna aplicación.
+                </p>
+
+                <article>
+                    <span class="check-texto">
+                        <i class="fas fa-check icono-check"></i> {{n}}
+                        <h3>Dirección Web Personalizada</h3>
+                    </span>
+                    <p>Tendrás tu propia dirección web con tu menú para compartir con los clientes o podrás usar la plataforma dentro de tu página si ya la tienes. </p>
+                </article>
+                <article>
+                    <span class="check-texto">
+                        <i class="fas fa-check icono-check"></i> {{n}}
+                        <h3>¡Ya No Necesitas Menús Impresos!</h3>
+                    </span>
+                    <p>
+                        No tener que imprimir menús desechables representa un significativo ahorro.
+                        Además el menú virtual resulta ser más eficaz, ya que
+                        puede mostrar imágenes, videos y su página de Facebook.
+                    </p>
+                </article>
+            </div>
+        </article>
+    </section>
+
+    <section class="restaurants-section restaurants-section-2">
+    
+        <article class="features-article features-article-2">
+            <div>
+                <h2>
+                    Consultar el menú del restaurante <br>
+                    escaneando un código QR con su teléfono
+                </h2>
+                <p>
+                    Las imágenes y videos ayudan a vender mejor la comida y las bebidas
+                    en comparación con un menú convencional.
+                </p>
+
+                <article>
+                    <span class="check-texto">
+                        <i class="fas fa-check icono-check"></i> {{n}}
+                        <h3>Integración Opcional Redes Sociales</h3>
+                    </span>
+                    <p>
+                        En tu Menú Virtual podes integrar tu página de Facebook o Instagram. De esta forma tus clientes
+                        recibirán las actualizaciones sobre ofertas y novedades en tiempo
+                        real.
+                    </p>
+                </article>
+                <article>
+                    <span class="check-texto">
+                        <i class="fas fa-check icono-check"></i> {{n}}
+                        <h3> Ofertas - Anuncios</h3>
+                    </span>
+                    <p>
+                        El Menú QR te ayudara a anuciar sobre ofertas 
+                        en comidas y bebidas, permitiendo a tus clientes
+                        estar informados desde su teléfono, sin necesidad
+                        de tener que descargar una app.
+                    </p>
+                </article>
+            </div>
+            <div class="center-image">
+                <img class="image-stop" src="/media/media/chef.png" alt="">
+            </div>
+        </article>
+    </section>
+
     <section class="prices-section">
         <h2>NUESTROS PRECIOS</h2>
         <p>
@@ -31,7 +119,7 @@
                         {% for n in detalles %}
                             {% if n.plan_id.name == i.name %}
                                 <li>
-                                    {{n}}
+                                    <i class="fas fa-check icono-check"></i> {{n}}
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -40,8 +128,6 @@
                     
             {% endfor %}
         </article>
-        
-        
             
     </section>
     <section class="restaurants-section">
