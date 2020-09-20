@@ -178,9 +178,14 @@
                 <img class="image-stop" src="/media/media/stop-covid.jpg" alt="">
             </div>
             <div>
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Send</button>
+                <h1>Contact Us</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-actions">
+                    <button type="submit">Send</button>
+                    </div>
+                </form>
                 <h2>Menú QR</h2>
                 <h2>Plataforma para menús virtuales</h2>
                 <p>

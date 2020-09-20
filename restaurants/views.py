@@ -1,5 +1,8 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render
+
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 
 from restaurants.models import Restaurant, Plan, PlanDetail
 
@@ -36,7 +39,7 @@ def index(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, from_email, ['paulsotelo97@gmail.com'])
+                send_mail(subject, message, from_email, ['paulsotelo97@gmail.com'], fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')

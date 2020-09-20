@@ -55,7 +55,7 @@ ROOT_URLCONF = 'menu_qr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,10 +125,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST_USER = 'paulsotelo97@gmail.com'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = 'will@learndjango.com'
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = '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'
+
+SENDGRID_SANDBOX_MODE_IN_DEBUG=True
+# SENDGRID_ECHO_TO_STDOUT=True
