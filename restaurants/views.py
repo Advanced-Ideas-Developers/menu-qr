@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 from restaurants.models import Restaurant, Plan, PlanDetail
 
+from restaurants.forms import ContactForm
+
 # Create your views here.
 
 class LasTejitasView(TemplateView):
@@ -20,5 +22,36 @@ def index(request):
     restaurants = Restaurant.objects.values('name', 'foto_restaurante', 'foto_portada', 'link', 'foto_qr')
     planes = Plan.objects.values('name', 'price')
     detalles_planes = PlanDetail.objects.select_related('plan_id')
-    print(str(planes.query))
-    return render(request, 'general/index.html', {'all': restaurants, "planes": planes, "detalles": detalles_planes})
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email, ['admin@example.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    return render(request, 'general/index.html', {'all': restaurants, "planes": planes, "detalles": detalles_planes, 'form': form})
+
+# def contactView(request):
+#     if request.method == 'GET':
+#         form = ContactForm()
+#     else:
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             subject = form.cleaned_data['subject']
+#             from_email = form.cleaned_data['from_email']
+#             message = form.cleaned_data['message']
+#             try:
+#                 send_mail(subject, message, from_email, ['admin@example.com'])
+#             except BadHeaderError:
+#                 return HttpResponse('Invalid header found.')
+#             return redirect('success')
+#     return render(request, "email.html", {'form': form})
+
+def successView(request):
+    return HttpResponse('Success! Thank you for your message.')
