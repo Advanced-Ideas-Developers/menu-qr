@@ -50,6 +50,8 @@ class Menu(models.Model):
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
         auto_now=True, verbose_name='Última actualización')
+    
+    
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50, verbose_name='Nombre de Categoría')

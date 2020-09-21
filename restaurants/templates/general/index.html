@@ -1,5 +1,5 @@
 {% include "general/header.html" %}
-<h2>AID</h2>
+<!-- <h2>AID</h2> -->
     <section class="menu-section">
         <div>
             <h2>QR Menu, <br> <span class="AID">AID</span> <br> Para Restaurantes y Bares </h2>
@@ -143,14 +143,18 @@
                 <section>
                     <h2>{{i.name}}</h2>
                     <img src="media/{{i.foto_restaurante}}" alt="">
+                    <a href="/restaurants/menu/{{i.link}}">{{i.link}}</a>
                 </section>
                 <section>
                     <h2>{{i.name}}</h2>
                     <img src="media/{{i.foto_restaurante}}" alt="">
+                    <a href="/restaurants/menu/{{i.link}}">{{i.link}}</a>
+                {{i.id}}
                 </section>
                 <section>
                     <h2>{{i.name}}</h2>
                     <img src="media/{{i.foto_restaurante}}" alt="">
+                    <a href="/restaurants/menu/{{i.link}}">{{i.link}}</a>
                 </section>
             {% endfor %}
             
@@ -178,44 +182,14 @@
                 <img class="image-stop" src="/media/media/stop-covid.jpg" alt="">
             </div>
             <div>
-                <h1>Contact Us</h1>
+                <h2>Formulario De Contacto</h2>
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="form-actions">
-                    <button type="submit">Send</button>
+                    <button type="submit">Enviar</button>
                     </div>
                 </form>
-                <h2>Menú QR</h2>
-                <h2>Plataforma para menús virtuales</h2>
-                <p>
-                    El elemento mas reutilizable de restaurantes 
-                    y bares es el menú. Desafortunadamente, en algunas 
-                    ocasiones se imposibiliza desinfectar el menú impreso 
-                    luego de cada uso. La solución, un Menú Virtual, a través
-                    de un teléfono móvil. El cliente tendrá que escanear un código
-                    QR con su dispositivo y verá el menú en su pantalla sin tener
-                    que descargar ninguna aplicación.
-                </p>
-
-                <article>
-                    <span class="check-texto">
-                        <i class="fas fa-check icono-check"></i> {{n}}
-                        <h3>Dirección Web Personalizada</h3>
-                    </span>
-                    <p>Tendrás tu propia dirección web con tu menú para compartir con los clientes o podrás usar la plataforma dentro de tu página si ya la tienes. </p>
-                </article>
-                <article>
-                    <span class="check-texto">
-                        <i class="fas fa-check icono-check"></i> {{n}}
-                        <h3>¡Ya No Necesitas Menús Impresos!</h3>
-                    </span>
-                    <p>
-                        No tener que imprimir menús desechables representa un significativo ahorro.
-                        Además el menú virtual resulta ser más eficaz, ya que
-                        puede mostrar imágenes, videos y su página de Facebook.
-                    </p>
-                </article>
             </div>
         </article>
     </section>

@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 
-from restaurants.models import Restaurant, Plan, PlanDetail
+from restaurants.models import Restaurant, Plan, PlanDetail, Menu, MenuDetail
 
 from restaurants.forms import ContactForm
 
@@ -28,7 +28,7 @@ class TacontentoView(TemplateView):
 
 def index(request):
     restaurants = Restaurant.objects.values(
-        'name', 'foto_restaurante', 'foto_portada', 'link', 'foto_qr')
+        'name', 'foto_restaurante', 'foto_portada', 'link', 'foto_qr', 'id')
     planes = Plan.objects.values('name', 'price')
     detalles_planes = PlanDetail.objects.select_related('plan_id')
     if request.method == 'GET':
@@ -36,20 +36,41 @@ def index(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data['subject']
+            name = form.cleaned_data['name']
+            phone = form.cleaned_data['phone']
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
-            # msg_plain = render_to_string('templates/email.txt', {'some_params': some_params})
-            # msg_html = render_to_string('templates/email.html', {'some_params': some_params})
             try:
-                html_message = render_to_string('general/email.html', {'subject': subject, 'message': message, 'from_email':from_email})
+                context = {
+                    'name': name, 
+                    'phone': phone, 
+                    'from_email':from_email,
+                    'message': message
+                }
+                html_message = render_to_string('general/email.html', context)
                 send_mail(
-                    subject, message, from_email, ['paulsotelo97@gmail.com'], html_message=html_message
+                    'Mensaje de contacto Menús QR', message, from_email, ['paulsotelo97@gmail.com'], html_message=html_message
                 )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
-    return render(request, 'general/index.html', {'all': restaurants, "planes": planes, "detalles": detalles_planes, 'form': form})
+    context = {
+        'all': restaurants, 
+        'planes': planes, 
+        'detalles': detalles_planes, 
+        'form': form
+    }
+    return render(request, 'general/index.html', context)
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')
+
+def menu(request, link):
+    restaurant = Restaurant.objects.get(link=link)
+    restaurant_id = restaurant.id
+    menu_id = Menu.objects.get(restaurant=restaurant_id).id
+
+    context={
+        'restaurant':restaurant,
+    }
+    return render(request, 'restaurants/menu.html', context)
