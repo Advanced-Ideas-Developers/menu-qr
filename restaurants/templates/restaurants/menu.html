@@ -1,39 +1,97 @@
 {% include "general/header.html" %}
 
-<section>
+<section class="menu-section-principal">
         
-        <article>
-            <img src="/media/{{restaurant.foto_portada}}" alt="">
-            <br>
+        <section class="article-portada-principal">
             <h1>
                 {{restaurant.name}}
             </h1>
-        </article>
-        <article>
-            <p>
-                {{restaurant.description}}
-            </p>
-            <br>
-            <img src="/media/{{restaurant.foto_portada_secundaria}}" alt="">
-            <br>
-            
-            {% for i in categories %}
-                {{i}}
-                <br>
-                {% for n in products %}
-                    
-                    
-                    {% if n.category_id.id == i.id %}
-                        {{n.product_name}}
-                        <br>
-                        {{n.currency}} {{n.price}}
-                    {% endif %}
+        </section>
+        <section class="menus-section-menus">
+            <section class="menus-section-menus-secundario">
+                <p>
+                    {{restaurant.description}}
+                </p>
+                <h2>Menús de {{restaurant.name}}</h2>
+                <div class="menus-portada-secundaria">
+
+                </div>
+                {% for i in categories %}
+                    <p>
+                        <strong>{{i}}</strong>
+                    </p>
+                    <ul>
+                        {% for n in products %}
+                            
+                            
+                            {% if n.category_id.id == i.id %}
+                                <li>
+                                    <span class="nombre-producto">{{n.product_name}}</span>
+                                    {{n.currency}} {{n.price}}
+                                </li>
+                            {% endif %}
+                                
+                                
+                        {% endfor %}
+                    </ul>
                         
                         
                 {% endfor %}
-                    
-                    
-            {% endfor %}
-        </article>
+            </section>
+        </section>
             
 </section>
+
+
+<style>
+    .article-portada-principal{
+        background-image: url('/media/{{restaurant.foto_portada}}');
+        min-height: 15rem;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-section-principal{
+        background-color: #F9F9F9;
+        min-height: 100vh;
+    }
+
+    .menus-section-menus{
+        padding: 5rem 6rem;
+    }
+
+    .menus-section-menus-secundario{
+        background-color: white;
+        padding: 1rem 3rem;
+        box-shadow: -1px 2px 30px #444;
+    }
+    .nombre-producto{
+        margin-right: 3rem;
+    }
+
+    .menus-portada-secundaria{
+        background-image: url(/media/media/el-alpino-resize.png);
+        min-height: 5rem;
+        background-repeat: no-repeat;
+        background-size: auto;
+        padding: 1rem;
+        background-color: #C7A08B;
+        background-position-y: center;
+        background-position-x: 2rem;
+        width: 60%;
+    }
+    @media(max-width:680px){
+        .menus-section-menus {
+            padding: 2rem;
+        }
+
+        .menus-portada-secundaria{
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+</style>
