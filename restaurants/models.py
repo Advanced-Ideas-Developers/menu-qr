@@ -45,16 +45,19 @@ class Restaurant(models.Model):
 
 
 class Menu(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Nombre', null=True)
     restaurant = models.OneToOneField(to='Restaurant',verbose_name='Restaurante', on_delete=models.CASCADE)
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
         auto_now=True, verbose_name='Última actualización')
-    
-    
+    def __str__(self):
+        return self.name
+
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50, verbose_name='Nombre de Categoría')
+    menu_id = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Menú', null=True)
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
@@ -63,17 +66,20 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
 
-class MenuDetail(models.Model):
-    menu = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Menú')
+class Product(models.Model):
+    category_id = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Category', null=True)
     product_name = models.CharField(max_length=50, verbose_name='Producto')
     description = models.TextField(verbose_name='Descripción')
     price = models.FloatField(verbose_name='Precio')
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Categoría')
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
         auto_now=True, verbose_name='Última actualización')
     
+    class Meta:
+        verbose_name = 'Producto'
+        verbose_name_plural = 'Productos'
+
     def __str__(self):
         return self.product_name
     

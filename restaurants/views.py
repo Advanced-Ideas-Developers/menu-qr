@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 
-from restaurants.models import Restaurant, Plan, PlanDetail, Menu, MenuDetail
+from restaurants.models import Restaurant, Plan, PlanDetail, Menu
 
 from restaurants.forms import ContactForm
 
