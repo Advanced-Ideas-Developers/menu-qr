@@ -69,9 +69,8 @@ def menu(request, link):
     restaurant = Restaurant.objects.get(link=link)
     restaurant_id = restaurant.id
     menu_id = Menu.objects.get(restaurant=restaurant_id).id
-    categorias = Category.objects.select_related('menu_id')
+    categorias = Category.objects.filter(menu_id=menu_id).select_related('menu_id')
     productos = Product.objects.select_related('category_id')
-
 
     context={
         'restaurant':restaurant,
