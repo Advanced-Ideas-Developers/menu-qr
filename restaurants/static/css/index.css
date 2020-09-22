@@ -256,4 +256,7 @@ footer a{
     .image-stop {
         width: 21rem;
     }
+    .article-paralax{
+        padding: 2rem;
+    }
 }

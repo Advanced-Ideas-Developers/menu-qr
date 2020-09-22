@@ -49,7 +49,7 @@ def index(request):
                 }
                 html_message = render_to_string('general/email.html', context)
                 send_mail(
-                    'Mensaje de contacto Menús QR', message, from_email, ['paulsotelo97@gmail.com'], html_message=html_message
+                    'Mensaje de contacto Menús QR', message, from_email, ['info@ai-devs.com'], html_message=html_message
                 )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
