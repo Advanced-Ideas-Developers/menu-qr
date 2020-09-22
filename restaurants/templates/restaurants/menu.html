@@ -13,9 +13,7 @@
                     {{restaurant.description}}
                 </p>
                 <h2>Menús de {{restaurant.name}}</h2>
-                <div class="menus-portada-secundaria">
-
-                </div>
+                <img class="portada-en-movil" src="/media/{{restaurant.foto_portada_secundaria}}" alt="">
                 {% for i in categories %}
                     <p>
                         <strong>{{i}}</strong>
@@ -74,7 +72,7 @@
     }
 
     .menus-portada-secundaria{
-        background-image: url(/media/media/el-alpino-resize.png);
+        background-image: url(/media/{{restaurant.foto_portada_secundaria}});
         min-height: 5rem;
         background-repeat: no-repeat;
         background-size: auto;
@@ -86,12 +84,15 @@
     }
     @media(max-width:680px){
         .menus-section-menus {
-            padding: 2rem;
+            padding: 0rem;
         }
 
-        .menus-portada-secundaria{
-            width: 100%;
-            margin-bottom: 2rem;
+        .menus-section-menus-secundario{
+            padding: 1rem 2rem;
+            min-height: 69vh;
+        }
+        .portada-en-movil{
+            display: block;    
         }
     }
 </style>
