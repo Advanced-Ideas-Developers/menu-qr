@@ -25,7 +25,7 @@
                             {% if n.category_id.id == i.id %}
                                 <li>
                                     <span class="nombre-producto">{{n.product_name}}</span>
-                                    {{n.currency}} {{n.price}}
+                                    <span class="precio-producto">{{n.currency}} {{n.price}}</span>
                                 </li>
                             {% endif %}
                                 
@@ -93,6 +93,12 @@
         }
         .portada-en-movil{
             display: block;    
+        }
+        .nombre-producto{
+            margin-right: 0rem;
+        }
+        .precio-producto {
+            float: right;
         }
     }
 </style>
