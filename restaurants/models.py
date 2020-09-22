@@ -27,8 +27,10 @@ class PlanDetail(models.Model):
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre')
+    description = models.TextField(default="", null=False)
     foto_restaurante = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
     foto_portada = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
+    foto_portada_secundaria = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
     foto_qr = models.ImageField(upload_to="media/", default='path/to/my/default/image.jpg')
     link = models.TextField(default="#", verbose_name='link')
     created_at = models.DateField(
@@ -67,10 +69,15 @@ class Category(models.Model):
         return self.category_name
 
 class Product(models.Model):
+    currency = (
+        ('C$', 'C$'),
+        ('$', '$')
+    )
     category_id = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Category', null=True)
     product_name = models.CharField(max_length=50, verbose_name='Producto')
     description = models.TextField(verbose_name='Descripción')
     price = models.FloatField(verbose_name='Precio')
+    currency = models.CharField(max_length=50, verbose_name='Moneda', choices=currency, default="C$")
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(

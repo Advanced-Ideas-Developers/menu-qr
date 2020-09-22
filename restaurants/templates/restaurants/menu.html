@@ -1,7 +1,39 @@
 {% include "general/header.html" %}
 
 <section>
-    
-    {{restaurant}}
         
+        <article>
+            <img src="/media/{{restaurant.foto_portada}}" alt="">
+            <br>
+            <h1>
+                {{restaurant.name}}
+            </h1>
+        </article>
+        <article>
+            <p>
+                {{restaurant.description}}
+            </p>
+            <br>
+            <img src="/media/{{restaurant.foto_portada_secundaria}}" alt="">
+            <br>
+            
+            {% for i in categories %}
+                {{i}}
+                <br>
+                {% for n in products %}
+                    
+                    
+                    {% if n.category_id.id == i.id %}
+                        {{n.product_name}}
+                        <br>
+                        {{n.currency}} {{n.price}}
+                    {% endif %}
+                        
+                        
+                {% endfor %}
+                    
+                    
+            {% endfor %}
+        </article>
+            
 </section>

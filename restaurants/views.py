@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 
-from restaurants.models import Restaurant, Plan, PlanDetail, Menu
+from restaurants.models import Restaurant, Plan, PlanDetail, Menu,  Category, Product
 
 from restaurants.forms import ContactForm
 
@@ -69,8 +69,13 @@ def menu(request, link):
     restaurant = Restaurant.objects.get(link=link)
     restaurant_id = restaurant.id
     menu_id = Menu.objects.get(restaurant=restaurant_id).id
+    categorias = Category.objects.select_related('menu_id')
+    productos = Product.objects.select_related('category_id')
+
 
     context={
         'restaurant':restaurant,
+        'categories' : categorias,
+        'products': productos
     }
     return render(request, 'restaurants/menu.html', context)
