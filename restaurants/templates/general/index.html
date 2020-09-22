@@ -142,18 +142,30 @@
             {% for i in all %}
                 <section>
                     <h2>{{i.name}}</h2>
-                    <img src="media/{{i.foto_restaurante}}" alt="">
-                    <a href="/restaurants/menu/{{i.link}}">{{i.link}}</a>
+                    <div class="contenedor-qr">
+                        <img class="restaurant-main-image" src="media/{{i.foto_restaurante}}" alt="">
+                        <a href="/restaurants/menu/{{i.link}}">
+                            <img class="restaurant-secundary-image" src="media/{{i.foto_qr}}" alt="">
+                        </a>
+                    </div>
                 </section>
                 <section>
                     <h2>{{i.name}}</h2>
-                    <img src="media/{{i.foto_restaurante}}" alt="">
-                    <a href="/restaurants/menu/{{i.link}}">{{i.link}}</a>
+                    <div class="contenedor-qr">
+                        <img class="restaurant-main-image" src="media/{{i.foto_restaurante}}" alt="">
+                        <a href="/restaurants/menu/{{i.link}}">
+                            <img class="restaurant-secundary-image" src="media/{{i.foto_qr}}" alt="">
+                        </a>
+                    </div>
                 </section>
                 <section>
                     <h2>{{i.name}}</h2>
-                    <img src="media/{{i.foto_restaurante}}" alt="">
-                    <a href="/restaurants/menu/{{i.link}}">{{i.link}}</a>
+                    <div class="contenedor-qr">
+                        <img class="restaurant-main-image" src="media/{{i.foto_restaurante}}" alt="">
+                        <a href="/restaurants/menu/{{i.link}}">
+                            <img class="restaurant-secundary-image" src="media/{{i.foto_qr}}" alt="">
+                        </a>
+                    </div>
                 </section>
             {% endfor %}
             
