@@ -13,8 +13,8 @@ class ContactForm(forms.Form):
     phone = forms.CharField(
         label=False, 
         required=False, 
-        widget=forms.TextInput(attrs={'placeholder': 'Teléfono'}))
+        widget=forms.TextInput(attrs={'placeholder': 'Número de teléfono'}))
     message = forms.CharField(
         required=True, 
         label=False,
-        widget=forms.Textarea(attrs={'placeholder':'Dejenos su mensaje'}))
+        widget=forms.Textarea(attrs={'placeholder':'Mensaje'}))

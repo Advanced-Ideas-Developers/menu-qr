@@ -11,7 +11,7 @@
             </p>
         </div>
         <div class="center-image">
-            <img src="/media/media/menu-qr.jpg" alt="">
+            <img src="/media/media/menu-qr.jpg" alt="menu-qr">
         </div>
     </section>
     <section class="restaurants-section">
@@ -97,7 +97,7 @@
                 </article>
             </div>
             <div class="center-image">
-                <img class="image-stop" src="/media/media/chef.png" alt="">
+                <img class="image-stop" src="/media/media/chef.png" alt="cheff">
             </div>
         </article>
     </section>
@@ -143,9 +143,9 @@
                 <section>
                     <h2>{{i.name}}</h2>
                     <div class="contenedor-qr">
-                        <img class="restaurant-main-image" src="media/{{i.foto_restaurante}}" alt="">
+                        <img class="restaurant-main-image" src="media/{{i.foto_restaurante}}" alt="foto-restaurante">
                         <a href="/restaurants/menu/{{i.link}}" target="__blank">
-                            <img class="restaurant-secundary-image" src="media/{{i.foto_qr}}" alt="">
+                            <img class="restaurant-secundary-image" src="media/{{i.foto_qr}}" alt="foto-qr">
                         </a>
                     </div>
                 </section>
@@ -171,8 +171,40 @@
         </p>
     
         <article class="features-article">
-            <div class="center-image">
-                <img class="image-stop" src="/media/media/stop-covid.jpg" alt="">
+            <div class="contacto-texto">
+                <h1>Desarrolla Tu Menú Virtual</h1>
+                <p>El Menú QR minimiza el contacto entre clientes y así evitas la propagación del COVID-19. No requiere descargar ninguna aplicación y es muy fácil de usar.</p>
+                <h1>Contacto</h1>
+                <ul class="lista-contacto-contacto">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+50578741494">+505 7874 1494</a>
+                    </li>
+                    <li>
+                        <i class="far fa-envelope"></i>
+                        <a href="mailto:info@ai-devs.com">info@ai-devs.com</a>
+                    </li>
+                </ul>
+                <h1>Redes Sociales</h1>
+                <article class="contacto_redes-sociales">
+                    <a href="https://www.facebook.com/AdvanceIDs" target="__blank">
+                        <i class="fab fa-facebook-f contacto-facebook">
+                        
+                        </i>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/advancedidevs/" target="__blank">
+                        <i class="fab fa-instagram contacto-instagram">
+    
+                        </i>
+                    </a>
+                    <a href="https://wa.me/50578741494" target="__blank">
+                        <i class="fab fa-whatsapp contacto-whatsapp">
+                            
+                        </i>
+                    </a>
+                    <!-- <p>© Copyright 2020. All Rights Reserved By  <a class="link-aid" href="https://ai-devs.com" target="__blank">Advanced Ideas Developers</a></p> -->
+                </article>
             </div>
             <div>
                 <h2>Formulario De Contacto</h2>
@@ -180,7 +212,7 @@
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="form-actions">
-                    <button type="submit">Enviar</button>
+                        <button class="boton-form" type="submit">Enviar</button>
                     </div>
                 </form>
             </div>

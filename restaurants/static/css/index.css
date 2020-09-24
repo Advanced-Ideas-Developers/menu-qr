@@ -9,8 +9,33 @@ h1,h2,h3,h4,h5{
     font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
 
-p, li{
+p, li, form, input, input::placeholder, textarea, textarea::placeholder{
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+input, input::placeholder, textarea, textarea::placeholder {
+    padding: 5px 3px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #00A1FA;
+    transition: 0.7s;
+}
+
+input, textarea {
+    padding: 5px 3px;
+    border-bottom: 1px solid black;
+    border: none;
+    border-bottom: 2px solid #E3E3E3;
+    max-width: 100%;
+    width: 63%;
+    font-size: 1rem;
+    resize: none;
+}
+
+textarea{
+    max-height: 9rem;
 }
 
 .menu-section{
@@ -208,6 +233,81 @@ footer a{
     transform: translate(-50%,-50%);
 }
 
+.boton-form{
+    font-weight: bold;
+    font-family: 'Montserrat';
+    font-size: 1.19rem;
+    padding: 10px 16px;
+    color: white;
+    background-color: #FF9500;
+    border: none;
+    width: 63%;
+}
+
+.lista-contacto-contacto{
+    padding: 0;
+}
+
+.lista-contacto-contacto a{
+    text-decoration: none;
+    color: #333;
+}
+
+.lista-contacto-contacto a:hover{
+    color: #00A1FA;
+    transition: 0.7s;
+}
+
+.lista-contacto-contacto i{
+    margin-right: 1rem;
+}
+
+.lista-contacto-contacto li{
+    list-style: none;
+    margin: 1rem 0rem;
+}
+
+.contacto_redes-sociales i {
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.contacto-facebook:hover {
+    color: #0088FB;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.contacto-instagram:hover {
+    color: #EE5296;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.contacto-whatsapp:hover {
+    color: #00CA33;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.contacto-texto{
+    padding-right: 4.5rem;
+    text-align: justify;
+}
+
+.link-aid{
+    color: #00A1FA !important;
+    text-decoration: none;
+}
+
+.contacto_redes-sociales a{
+    text-decoration: none;
+    color: #333;
+}
+
+.contacto-texto>* {
+    margin-bottom: 1.5rem;
+}
+
 @media(max-width:680px){
     .menu-section {
         padding: 2rem;
@@ -258,5 +358,14 @@ footer a{
     }
     .article-paralax{
         padding: 2rem;
+    }
+
+    input, textarea {
+        width: 90%;
+    }
+
+    .form-actions{
+        text-align: center;
+        margin-top: 2rem;
     }
 }
