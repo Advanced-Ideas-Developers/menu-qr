@@ -59,6 +59,7 @@ class Menu(models.Model):
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50, verbose_name='Nombre de Categoría')
+    category_show = models.CharField(max_length=50, verbose_name='Nombre de categoría a mostrar', null=True)
     menu_id = models.ForeignKey('Menu', on_delete=models.CASCADE, verbose_name='Menú', null=True)
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
