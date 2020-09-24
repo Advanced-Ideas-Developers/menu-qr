@@ -308,6 +308,47 @@ footer a{
     margin-bottom: 1.5rem;
 }
 
+.navbar-general{
+    background-color:#00CDC1
+}
+
+.navbar-general ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    column-gap: 3rem;
+    margin: 0 4rem;
+    align-items: center;
+    min-height: 6rem;
+}
+
+.navbar-general li {
+    list-style: none;
+    font-weight: bold;
+}
+
+.navbar-general a{
+    text-decoration: none;
+    color: white;
+}
+
+.boton-contacto{
+    font-weight: bold;
+    font-family: 'Montserrat';
+    font-size: 1.19rem;
+    padding: 10px 21px;
+    color: white;
+    background-color: #FF9500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.contacto-li{
+    margin-top: 1rem;
+}
+
 @media(max-width:680px){
     .menu-section {
         padding: 2rem;
