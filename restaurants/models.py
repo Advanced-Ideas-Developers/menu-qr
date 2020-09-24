@@ -67,7 +67,7 @@ class Category(models.Model):
         auto_now=True, verbose_name='Última actualización')
     
     def __str__(self):
-        return self.category_name
+        return self.category_name + ' ' + self.menu_id.restaurant.name
 
 class Product(models.Model):
     currency = (
