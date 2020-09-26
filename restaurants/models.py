@@ -80,6 +80,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Descripción')
     price = models.FloatField(verbose_name='Precio')
     currency = models.CharField(max_length=50, verbose_name='Moneda', choices=currency, default="C$")
+    product_image = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(

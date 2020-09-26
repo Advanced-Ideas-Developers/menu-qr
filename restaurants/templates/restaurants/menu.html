@@ -23,7 +23,13 @@
                             
                             
                             {% if n.category_id.id == i.id %}
-                                <li>
+                            <!-- <article>
+                                {{n.product_image}}
+                                {{n.product_name}}
+                                {{n.description}}
+                                {{n.currency}}{{n.price}}
+                            </article>     -->
+                            <li>
                                     <span class="nombre-producto">{{n.product_name}}</span>
                                     <span class="precio-producto">{{n.currency}} {{n.price}}</span>
                                 </li>
