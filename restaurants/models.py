@@ -27,6 +27,7 @@ class PlanDetail(models.Model):
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre')
+    restaurant_test = models.BooleanField(default=False)
     description = models.TextField(default="", null=False)
     foto_restaurante = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
     foto_portada = models.ImageField(upload_to='media/', default='path/to/my/default/image.jpg')
