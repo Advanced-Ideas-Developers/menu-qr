@@ -1,116 +1,113 @@
 {% include "general/header.html" %}
 
 <section class="menu-section-principal">
-        
-        <section class="article-portada-principal">
-            <h1>
-                {{restaurant.name}}
-            </h1>
-        </section>
-        <section class="menus-section-menus">
-            <section class="menus-section-menus-secundario">
-                <p>
-                    {{restaurant.description}}
-                </p>
-                <h2>Menús de {{restaurant.name}}</h2>
-                <img class="imagen-portada-secundaria" src="/media/{{restaurant.foto_portada_secundaria}}" alt="">
-                {% for i in categories %}
-                    <p>
-                        <strong>{{i.category_show}}</strong>
-                    </p>
-                    <ul>
-                        {% for n in products %}
-                            
-                            
-                            {% if n.category_id.id == i.id %}
-                            <!-- <article>
+  <section class="article-portada-principal">
+    <h1>
+      {{restaurant.name}}
+    </h1>
+  </section>
+  <section class="menus-section-menus">
+    <section class="menus-section-menus-secundario">
+      <p>
+        {{restaurant.description}}
+      </p>
+      <h2>Menús de {{restaurant.name}}</h2>
+      <img class="imagen-portada-secundaria" src="/media/{{restaurant.foto_portada_secundaria}}" alt="">
+      {% for i in categories %}
+      <p>
+        <strong>{{i.category_show}}</strong>
+      </p>
+      <ul>
+        {% for n in products %}
+        {% if n.category_id.id == i.id %}
+        <!-- <article>
                                 {{n.product_image}}
                                 {{n.product_name}}
                                 {{n.description}}
                                 {{n.currency}}{{n.price}}
                             </article>     -->
-                            <li>
-                                    <span class="nombre-producto">{{n.product_name}}</span>
-                                    <span class="precio-producto">{{n.currency}} {{n.price}}</span>
-                                </li>
-                            {% endif %}
-                                
-                                
-                        {% endfor %}
-                    </ul>
-                        
-                        
-                {% endfor %}
-            </section>
-        </section>
-            
+        <li>
+          <span class="nombre-producto">{{n.product_name}}</span>
+          <span class="precio-producto">{{n.currency}} {{n.price}}</span>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </section>
+  </section>
 </section>
 
 
 <style>
-    .article-portada-principal{
-        background-image: url('/media/{{restaurant.foto_portada}}');
-        min-height: 15rem;
-        color: white;
-        text-transform: uppercase;
-        font-size: 2.1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-position: bottom;
+  .article-portada-principal {
+    background-image: url('/media/{{restaurant.foto_portada}}');
+    min-height: 15rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: bottom;
+  }
+
+  .menu-section-principal {
+    background-color: #F9F9F9;
+    min-height: 100vh;
+  }
+
+  .menus-section-menus {
+    padding: 5rem 6rem;
+  }
+
+  .menus-section-menus-secundario {
+    background-color: white;
+    padding: 1rem 3rem;
+    box-shadow: -1px 2px 30px #444;
+  }
+
+  .nombre-producto {
+    margin-right: 3rem;
+  }
+
+  .menus-portada-secundaria {
+    background-image: url(/media/{{restaurant.foto_portada_secundaria}});
+    min-height: 5rem;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 1rem;
+    background-color: #C7A08B;
+    background-position-y: center;
+    background-position-x: 2rem;
+    width: 60%;
+  }
+
+  .imagen-portada-secundaria {
+    max-width: 30rem;
+  }
+
+  @media(max-width:680px) {
+    .menus-section-menus {
+      padding: 0rem;
     }
 
-    .menu-section-principal{
-        background-color: #F9F9F9;
-        min-height: 100vh;
+    .menus-section-menus-secundario {
+      padding: 1rem 2rem;
+      min-height: 69vh;
     }
 
-    .menus-section-menus{
-        padding: 5rem 6rem;
+    .imagen-portada-secundaria {
+      display: block;
+      max-width: 90%;
     }
 
-    .menus-section-menus-secundario{
-        background-color: white;
-        padding: 1rem 3rem;
-        box-shadow: -1px 2px 30px #444;
-    }
-    .nombre-producto{
-        margin-right: 3rem;
+    .nombre-producto {
+      margin-right: 0rem;
     }
 
-    .menus-portada-secundaria{
-        background-image: url(/media/{{restaurant.foto_portada_secundaria}});
-        min-height: 5rem;
-        background-repeat: no-repeat;
-        background-size: auto;
-        padding: 1rem;
-        background-color: #C7A08B;
-        background-position-y: center;
-        background-position-x: 2rem;
-        width: 60%;
+    .precio-producto {
+      float: right;
     }
-
-    .imagen-portada-secundaria{
-        max-width: 30rem;    
-    }
-    @media(max-width:680px){
-        .menus-section-menus {
-            padding: 0rem;
-        }
-
-        .menus-section-menus-secundario{
-            padding: 1rem 2rem;
-            min-height: 69vh;
-        }
-        .imagen-portada-secundaria{
-            display: block;
-            max-width: 90%;
-        }
-        .nombre-producto{
-            margin-right: 0rem;
-        }
-        .precio-producto {
-            float: right;
-        }
-    }
+  }
 </style>
