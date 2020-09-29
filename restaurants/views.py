@@ -1,11 +1,11 @@
 from django.views.generic import TemplateView
 
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 
-from restaurants.models import Restaurant, Plan, PlanDetail, Menu,  Category, Product
+from restaurants.models import Restaurant, Plan, PlanDetail, Menu, Category, Product
 
 from restaurants.forms import ContactForm
 
@@ -42,9 +42,9 @@ def index(request):
             message = form.cleaned_data['message']
             try:
                 context = {
-                    'name': name, 
-                    'phone': phone, 
-                    'from_email':from_email,
+                    'name': name,
+                    'phone': phone,
+                    'from_email': from_email,
                     'message': message
                 }
                 html_message = render_to_string('general/email.html', context)
@@ -55,26 +55,29 @@ def index(request):
                 return HttpResponse('Invalid header found.')
             return redirect('success')
     context = {
-        'all': restaurants, 
-        'planes': planes, 
-        'detalles': detalles_planes, 
+        'all': restaurants,
+        'planes': planes,
+        'detalles': detalles_planes,
         'form': form
     }
     return render(request, 'general/index.html', context)
 
+
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')
+
 
 def menu(request, link):
     restaurant = Restaurant.objects.get(link=link)
     restaurant_id = restaurant.id
     menu_id = Menu.objects.get(restaurant=restaurant_id).id
-    categorias = Category.objects.filter(menu_id=menu_id).select_related('menu_id')
+    categorias = Category.objects.filter(
+        menu_id=menu_id).select_related('menu_id')
     productos = Product.objects.select_related('category_id')
 
-    context={
-        'restaurant':restaurant,
-        'categories' : categorias,
+    context = {
+        'restaurant': restaurant,
+        'categories': categorias,
         'products': productos
     }
     return render(request, 'restaurants/menu.html', context)
