@@ -1,5 +1,181 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,300;1,700;1,900&display=swap");
+
+* {
   margin: 0;
   padding: 0;
+  font-family: 'Lato';
 }
 
+body{
+  background-color:#F8F8F8;
+}
+
+.banner-portada {
+  position: relative;
+  width: 100vw;
+  height: 65vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.line{
+  background-color: #FF521C;
+  width: 8px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.info-restaurante {
+  position: absolute;
+  background-color: #102733;
+  width: 20rem;
+  min-height: 20rem;
+  padding: 2rem;
+  padding-top: 0;
+  color: white;
+  right: 55px;
+  bottom: -260px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px transparent solid;
+}
+
+.info-restaurante h1{
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2.6rem;
+}
+
+.info-restaurante p{
+  text-align: left;
+}
+
+.info-restaurante img{
+  width: 20px;
+  margin-top: 1.3rem;
+}
+
+.container-menu{
+  position: relative;
+  margin: 20rem 5rem 6rem 5rem;
+  min-height: 50rem;
+  padding: 2rem;
+  padding-bottom: 12rem;
+  box-shadow: 9px 10px 7px -1px rgba(173,173,173,1);
+  background-color: white;
+}
+
+.container-menu h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.container-menu hr{
+  margin: 5rem 10rem;
+}
+
+.circles, .dots, .circles2{
+  position: absolute;
+}
+
+.dots{
+  top: -30px;
+  right: 20px;
+  width: 7rem;
+}
+
+.circles{
+  top: 235px;
+  right: 20px;
+  width: 7rem;
+}
+
+.circles2{
+  bottom: -50px;
+  left: 50px;
+  width: 7rem;
+}
+
+.logo{
+  width: 10rem !important;
+}
+
+.menu-header h2{
+  margin: 4rem auto 0 auto;
+}
+
+.product{
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  column-gap: 0.5rem;
+  margin: .6rem 0;
+}
+
+.product-img{
+  width: 100%;
+}
+
+.product-price{
+  margin: auto;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.product-detail h2{
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  margin-bottom: .7rem;
+}
+
+/* Media Querys */
+
+@media(max-width: 425px){
+  .info-restaurante{
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .container-menu{
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+
+  .dots, .circles, .circles2{
+    width: 4rem;
+  }
+
+  .circles{
+    top: 150px;
+  }
+
+  .circles2{
+    bottom: -25px;
+  }
+
+  .product-detail h2{
+    font-size: 1.2rem;
+  }
+
+  .product-price{
+    font-size: 0.8rem;
+  }
+
+  .product{
+    grid-template-columns: 15% 65% 20%;
+  }
+}
+
+@media(max-width: 375px) {
+  .info-restaurante{
+    width: 70%;
+  }
+
+  .container-menu{
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
