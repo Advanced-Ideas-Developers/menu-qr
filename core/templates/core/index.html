@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menús QR | AID</title>
+</head>
+
+<body>
+  <section class="menu-section" id="home">
+    <div>
+      <h2>Menús QR, <br> <span class="AID">AID</span> <br> Para Restaurantes y Bares </h2>
+
+      <p>
+        Utiliza en tu local el código QR para ayudar a contener la propagación de COVID-19. <br>
+        Con nuestros QR Menu los clientes visualizaran tus especialidades/servicios sin <brr>
+          necesidad de instalar ninguna APP en sus teléfonos móviles
+      </p>
+    </div>
+    <div class="center-image">
+      <img src="/media/media/menu-qr.jpg" alt="menu-qr">
+    </div>
+  </section>
+  <section class="restaurants-section" id="menu">
+    <h2>CARACTERÍSTICAS</h2>
+    <p>
+      ¡Luchá contra el COVID-19 con nuestros menús digitales!
+    </p>
+
+    <article class="features-article">
+      <div class="center-image">
+        <img class="image-stop" src="/media/media/stop-covid.jpg" alt="">
+      </div>
+      <div>
+        <h2>Menú QR</h2>
+        <h2>Plataforma para menús virtuales</h2>
+        <p>
+          El elemento mas reutilizable de restaurantes
+          y bares es el menú. Desafortunadamente, en algunas
+          ocasiones se imposibiliza desinfectar el menú impreso
+          luego de cada uso. La solución, un Menú Virtual, a través
+          de un teléfono móvil. El cliente tendrá que escanear un código
+          QR con su dispositivo y verá el menú en su pantalla sin tener
+          que descargar ninguna aplicación.
+        </p>
+
+        <article>
+          <span class="check-texto">
+            <i class="fas fa-check icono-check"></i> {{n}}
+            <h3>Dirección Web Personalizada</h3>
+          </span>
+          <p>Tendrás tu propia dirección web con tu menú para compartir con los clientes o podrás usar la
+            plataforma dentro de tu página si ya la tienes. </p>
+        </article>
+        <article>
+          <span class="check-texto">
+            <i class="fas fa-check icono-check"></i> {{n}}
+            <h3>¡Ya No Necesitas Menús Impresos!</h3>
+          </span>
+          <p>
+            No tener que imprimir menús desechables representa un significativo ahorro.
+            Además el menú virtual resulta ser más eficaz, ya que
+            puede mostrar imágenes, videos y su página de Facebook.
+          </p>
+        </article>
+      </div>
+    </article>
+  </section>
+
+  <section class="restaurants-section restaurants-section-2">
+
+    <article class="features-article features-article-2">
+      <div>
+        <h2>
+          Consultar el menú del restaurante <br>
+          escaneando un código QR con su teléfono
+        </h2>
+        <p>
+          Las imágenes y videos ayudan a vender mejor la comida y las bebidas
+          en comparación con un menú convencional.
+        </p>
+
+        <article>
+          <span class="check-texto">
+            <i class="fas fa-check icono-check"></i> {{n}}
+            <h3>Integración Opcional Redes Sociales</h3>
+          </span>
+          <p>
+            En tu Menú Virtual podes integrar tu página de Facebook o Instagram. De esta forma tus clientes
+            recibirán las actualizaciones sobre ofertas y novedades en tiempo
+            real.
+          </p>
+        </article>
+        <article>
+          <span class="check-texto">
+            <i class="fas fa-check icono-check"></i> {{n}}
+            <h3> Ofertas - Anuncios</h3>
+          </span>
+          <p>
+            El Menú QR te ayudara a anuciar sobre ofertas
+            en comidas y bebidas, permitiendo a tus clientes
+            estar informados desde su teléfono, sin necesidad
+            de tener que descargar una app.
+          </p>
+        </article>
+      </div>
+      <div class="center-image">
+        <img class="image-stop" src="/media/media/chef.png" alt="cheff">
+      </div>
+    </article>
+  </section>
+
+  <section class="prices-section" id="precios">
+    <h2>NUESTROS PRECIOS</h2>
+    <p>
+      Debido a la situación actual, los restaurantes y bares necesitan una solución de menús que no incluyan el
+      contacto que ayuden <br> a frenar la propagación del COVID-19. El Menú QR representa una solución accesible
+      y profesional.
+    </p>
+
+    <article class="restaurants-article plans-article">
+      {% for i in planes %}
+      <section>
+        <div class="plans-titles">
+          <h3>{{i.name}}</h3>
+          <h2>${{i.price}} <span class="little-part">/ Año</span></h2>
+        </div>
+        <ul>
+          {% for n in detalles %}
+          {% if n.plan_id.name == i.name %}
+          <li>
+            <i class="fas fa-check icono-check"></i> {{n}}
+          </li>
+          {% endif %}
+          {% endfor %}
+          <li class="contacto-li">
+            <a href="#contactos" class="boton-contacto">Contactar</a>
+          </li>
+        </ul>
+      </section>
+
+      {% endfor %}
+    </article>
+
+  </section>
+  <section class="restaurants-section ejemplos-section" id="ejemplos">
+    <h2>EJEMPLOS</h2>
+    <p>
+      En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu. <br>
+      Escanear los códigos QR que aparecen en las fotos.
+    </p>
+
+    <article class="restaurants-article">
+
+      {% for i in all %}
+      <section>
+        <h2>{{i.name}}</h2>
+        <div class="contenedor-qr">
+          <img class="restaurant-main-image" src="media/{{i.foto_restaurante}}" alt="foto-restaurante">
+          <a href="/restaurants/menu/{{i.link}}" target="__blank">
+            <img class="restaurant-secundary-image" src="media/{{i.foto_qr}}" alt="foto-qr">
+          </a>
+        </div>
+      </section>
+      {% endfor %}
+
+    </article>
+  </section>
+
+  <article class="article-paralax">
+    <h3>MENU QR</h3>
+    <p>
+      Luchar contra el COVID-19, minimizar el riesgo de contacto <br>
+      entre tus clientes al habilitar menú virtual <nr>
+        ¡No requiere descargar ninguna apliación!
+    </p>
+  </article>
+
+  <section class="restaurants-section" id="contactos">
+    <h2>CONTACTOS</h2>
+    <p>
+      Si tiene alguna consulta, necesita un presupuesto o quiere hacer una propuesta, rellene el formulario
+      <br> o llámenos, y le contestaremos lo antes posible.
+    </p>
+
+    <article class="features-article">
+      <div class="contacto-texto">
+        <h1>Desarrolla Tu Menú Virtual</h1>
+        <p>El Menú QR minimiza el contacto entre clientes y así evitas la propagación del COVID-19. No requiere
+          descargar ninguna aplicación y es muy fácil de usar.</p>
+        <h1>Contacto</h1>
+        <ul class="lista-contacto-contacto">
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+50578741494">+505 7874 1494</a>
+          </li>
+          <li>
+            <i class="far fa-envelope"></i>
+            <a href="mailto:info@ai-devs.com">info@ai-devs.com</a>
+          </li>
+        </ul>
+        <h1>Redes Sociales</h1>
+        <article class="contacto_redes-sociales">
+          <a href="https://www.facebook.com/AdvanceIDs" target="_blank">
+            <i class="fab fa-facebook-f contacto-facebook">
+
+            </i>
+          </a>
+
+          <a href="https://www.instagram.com/advancedidevs/" target="_blank">
+            <i class="fab fa-instagram contacto-instagram">
+
+            </i>
+          </a>
+          <a href="https://wa.me/50578741494" target="_blank">
+            <i class="fab fa-whatsapp contacto-whatsapp">
+
+            </i>
+          </a>
+          <!-- <p>© Copyright 2020. All Rights Reserved By  <a class="link-aid" href="https://ai-devs.com" target="__blank">Advanced Ideas Developers</a></p> -->
+        </article>
+      </div>
+      <div>
+        <h2>Formulario De Contacto</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="form-actions">
+            <button class="boton-form" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </article>
+  </section>
+  <hr class="hr-final">
+</body>
+
+</html>
+<!-- <nav class="navbar-general">
+        <ul>
+            <li>
+                <a href="#home">HOME</a>
+            </li>
+            <li>
+                <a href="#menu">MENÚ QR</a>
+            </li>
+            <li>
+                <a href="#precios">PRECIOS</a>
+            </li>
+            <li>
+                <a href="#ejemplos">EJEMPLOS</a>
+            </li>
+            <li>
+                <a href="#contactos">CONTACTOS</a>
+            </li>
+        </ul>
+    </nav> -->
