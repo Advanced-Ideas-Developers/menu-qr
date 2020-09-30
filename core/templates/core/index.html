@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-
+{% load static %}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <title>Menús QR | AID</title>
 </head>
 
 <body>
-  <section class="menu-section" id="home">
-    <div>
-      <h2>Menús QR, <br> <span class="AID">AID</span> <br> Para Restaurantes y Bares </h2>
+  <nav>
+    <ul class="nav-items">
+      <li class="nav-item"><a href="#">Inicio</a></li>
+      <li class="nav-item"><a href="#">¿Qué es?</a></li>
+      <li class="nav-item"><a href="#">Precios</a></li>
+      <li class="nav-item"><a href="#">Nuestros clientes</a></li>
+      <li class="nav-item"><a href="#">Contácteno</a>s</li>
+    </ul>
+  </nav>
+  <div class="index">
+    <div class="circle"></div>
+    <div class="row-index">
+      <div class="column1">
+        <div class="container-img">
+          <img src="{% static 'core/img/dots.svg' %}" class="dots">
+          <img src="{% static 'core/img/dots.svg' %}" class="dots2">
+          <img src="{% static 'core/img/QR.svg' %}" class="QR-index">
+          <div class="gradient-box"></div>
+        </div>
+      </div>
+      <div class="column2">
+        <h3 class="aid-title">Advanced Ideas Developers</h3>
+        <h1 class="QR-title">Menú QR<br>Restaurantes y bares</h1>
+        <p class="desc-index">Utiliza en tu local el código QR para ayudar a contener la propagación de COVID-19.
+          Con nuestros QR Menu los clientes visualizaran tus especialidades/servicios sin
+            necesidad de instalar ninguna APP en sus teléfonos móviles.</p>
+        <div class="buttons-index">
+          <button class="btn contact">Contactar <i class="fas fa-arrow-right"></i></button>
+          <button class="btn test">Probar ahora <i class="fas fa-mobile-alt"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <p>
-        Utiliza en tu local el código QR para ayudar a contener la propagación de COVID-19. <br>
-        Con nuestros QR Menu los clientes visualizaran tus especialidades/servicios sin <brr>
-          necesidad de instalar ninguna APP en sus teléfonos móviles
-      </p>
-    </div>
-    <div class="center-image">
-      <img src="/media/media/menu-qr.jpg" alt="menu-qr">
-    </div>
-  </section>
   <section class="restaurants-section" id="menu">
     <h2>CARACTERÍSTICAS</h2>
     <p>

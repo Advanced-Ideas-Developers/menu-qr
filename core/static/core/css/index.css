@@ -1,33 +1,158 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Esteban&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-body {
+* {
   margin: 0;
+  font-family: "Poppins";
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+  width: 100%;
+  z-index: 2;
 }
 
-p,
-li,
-form,
-input,
-input::placeholder,
-textarea,
-textarea::placeholder {
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+.nav-items {
+  display: flex;
 }
 
-input,
-input::placeholder,
-textarea,
-textarea::placeholder {
-  padding: 5px 3px;
+.nav-item {
+  list-style: none;
+  margin: 1.2rem;
+  padding-bottom: 0.3rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #102733;
+}
+
+.index {
+  position: relative;
+  height: 100vh;
+}
+
+.circle {
+  position: absolute;
+  background-color: #102733;
+  width: 100vw;
+  height: 100vw;
+  border-radius: 50%;
+  top: -120%;
+  left: -65%;
+  z-index: -1;
+}
+
+.row-index {
+  display: flex;
+}
+
+.column1 {
+  position: relative;
+}
+
+.container-img {
+  position: relative;
+  width: 35rem;
+  height: 30rem;
+  margin: auto;
+  margin-top: 3rem;
+  margin-right: 0;
+}
+
+.gradient-box,
+.dots,
+.dots2,
+.QR-index {
+  position: absolute;
+}
+
+.gradient-box {
+  width: 20rem;
+  height: 20rem;
+  background: transparent linear-gradient(132deg, #ef4c00 0%, #172433 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: 14px 30px 29px #0000000f;
+  border-radius: 10px;
+  left: 10rem;
+  top: 10rem;
+}
+
+.dots {
+  right: 2rem;
+  top: 70px;
+  width: 15rem;
+}
+
+.dots2 {
+  bottom: -3.5rem;
+  left: 4rem;
+  width: 15rem;
+  z-index: 2;
+}
+
+.QR-index {
+  width: 28rem;
+  z-index: 1;
+  top: 70px;
+}
+
+.column2,
+.column1 {
+  width: 50vw;
+  height: 100vh;
+}
+
+.column2{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+.aid-title{
+  color: #EF4C00;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.QR-title{
+  color: #102733;
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.desc-index{
+  color: #102733;
+  margin-bottom: 2rem;
+}
+
+.buttons-index{
+  margin-bottom: 8rem;
+}
+
+.btn{
+  padding: 0.5rem 1.4rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.contact{
+  color: white;
+  background-color: #102733;
+}
+
+.contact i{
+  color: #EF4C00;
+}
+
+.test{
+  background-color: white;
+  color: #1B2D36;
 }
 
 input:focus,
