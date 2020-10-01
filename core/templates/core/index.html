@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 {% load static %}
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +37,7 @@
         <h1 class="QR-title">Menú QR<br>Restaurantes y bares</h1>
         <p class="desc-index">Utiliza en tu local el código QR para ayudar a contener la propagación de COVID-19.
           Con nuestros QR Menu los clientes visualizaran tus especialidades/servicios sin
-            necesidad de instalar ninguna APP en sus teléfonos móviles.</p>
+          necesidad de instalar ninguna APP en sus teléfonos móviles.</p>
         <div class="buttons-index">
           <button class="btn contact">Contactar <i class="fas fa-arrow-right"></i></button>
           <button class="btn test">Probar ahora <i class="fas fa-mobile-alt"></i></button>
@@ -45,128 +46,76 @@
     </div>
   </div>
 
-  <section class="restaurants-section" id="menu">
-    <h2>CARACTERÍSTICAS</h2>
-    <p>
-      ¡Luchá contra el COVID-19 con nuestros menús digitales!
-    </p>
+  <div class="section2">
+    <h2>¿Por qué tener un menú digital?</h2>
+    <p>El mundo ha cambiado y la tecnología ha avanzado, ya no necesitas repartir tu menú. <br>Tus clientes verán tus
+      productos desde su celular.</p>
+  </div>
 
-    <article class="features-article">
-      <div class="center-image">
-        <img class="image-stop" src="/media/media/stop-covid.jpg" alt="">
+  <div class="our-platform">
+    <div class="container-platform">
+      <div class="trapecio">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
       </div>
-      <div>
-        <h2>Menú QR</h2>
-        <h2>Plataforma para menús virtuales</h2>
-        <p>
-          El elemento mas reutilizable de restaurantes
-          y bares es el menú. Desafortunadamente, en algunas
-          ocasiones se imposibiliza desinfectar el menú impreso
-          luego de cada uso. La solución, un Menú Virtual, a través
-          de un teléfono móvil. El cliente tendrá que escanear un código
-          QR con su dispositivo y verá el menú en su pantalla sin tener
-          que descargar ninguna aplicación.
-        </p>
-
-        <article>
-          <span class="check-texto">
-            <i class="fas fa-check icono-check"></i> {{n}}
-            <h3>Dirección Web Personalizada</h3>
-          </span>
-          <p>Tendrás tu propia dirección web con tu menú para compartir con los clientes o podrás usar la
-            plataforma dentro de tu página si ya la tienes. </p>
-        </article>
-        <article>
-          <span class="check-texto">
-            <i class="fas fa-check icono-check"></i> {{n}}
-            <h3>¡Ya No Necesitas Menús Impresos!</h3>
-          </span>
-          <p>
-            No tener que imprimir menús desechables representa un significativo ahorro.
-            Además el menú virtual resulta ser más eficaz, ya que
-            puede mostrar imágenes, videos y su página de Facebook.
-          </p>
-        </article>
+      <img src="{% static 'core/img/phoneQR.svg' %}" class="phoneQR">
+    </div>
+    <div class="platform-items">
+      <div class="platform-header">
+        <h2>Nuestra plataforma genera tu menú digital.</h2>
+        <p>Tus clientes verán tu menú escaneando el código QR con la cámara. Ya no más menus impresos en tu negocio.</p>
       </div>
-    </article>
-  </section>
-
-  <section class="restaurants-section restaurants-section-2">
-
-    <article class="features-article features-article-2">
-      <div>
-        <h2>
-          Consultar el menú del restaurante <br>
-          escaneando un código QR con su teléfono
-        </h2>
-        <p>
-          Las imágenes y videos ayudan a vender mejor la comida y las bebidas
-          en comparación con un menú convencional.
-        </p>
-
-        <article>
-          <span class="check-texto">
-            <i class="fas fa-check icono-check"></i> {{n}}
-            <h3>Integración Opcional Redes Sociales</h3>
-          </span>
-          <p>
-            En tu Menú Virtual podes integrar tu página de Facebook o Instagram. De esta forma tus clientes
-            recibirán las actualizaciones sobre ofertas y novedades en tiempo
-            real.
-          </p>
-        </article>
-        <article>
-          <span class="check-texto">
-            <i class="fas fa-check icono-check"></i> {{n}}
-            <h3> Ofertas - Anuncios</h3>
-          </span>
-          <p>
-            El Menú QR te ayudara a anuciar sobre ofertas
-            en comidas y bebidas, permitiendo a tus clientes
-            estar informados desde su teléfono, sin necesidad
-            de tener que descargar una app.
-          </p>
-        </article>
-      </div>
-      <div class="center-image">
-        <img class="image-stop" src="/media/media/chef.png" alt="cheff">
-      </div>
-    </article>
-  </section>
-
-  <section class="prices-section" id="precios">
-    <h2>NUESTROS PRECIOS</h2>
-    <p>
-      Debido a la situación actual, los restaurantes y bares necesitan una solución de menús que no incluyan el
-      contacto que ayuden <br> a frenar la propagación del COVID-19. El Menú QR representa una solución accesible
-      y profesional.
-    </p>
-
-    <article class="restaurants-article plans-article">
-      {% for i in planes %}
-      <section>
-        <div class="plans-titles">
-          <h3>{{i.name}}</h3>
-          <h2>${{i.price}} <span class="little-part">/ Año</span></h2>
+      <div class="platform-element">
+        <img src="{% static 'core/img/www.svg' %}">
+        <div>
+          <h3>Tendrás tu dirección web personalizada.</h3>
+          <p>Tendrás tu propia dirección web con tu menú para compartir con los clientes o podrás usar la plataforma
+            dentro de tu página si ya la tienes.</p>
         </div>
-        <ul>
-          {% for n in detalles %}
-          {% if n.plan_id.name == i.name %}
-          <li>
-            <i class="fas fa-check icono-check"></i> {{n}}
-          </li>
-          {% endif %}
-          {% endfor %}
-          <li class="contacto-li">
-            <a href="#contactos" class="boton-contacto">Contactar</a>
-          </li>
-        </ul>
-      </section>
+      </div>
+      <div class="platform-element">
+        <img src="{% static 'core/img/facebook.svg' %}">
+        <div>
+          <h3>Integración de tus redes sociales para ofertas.</h3>
+          <p>En tu Menú Virtual podes integrar tu página de Facebook o Instagram. De esta forma tus clientes recibirán
+            las actualizaciones sobre ofertas y novedades en tiempo real.</p>
+        </div>
+      </div>
+      <div class="platform-element">
+        <img src="{% static 'core/img/megafono.svg' %}">
+        <div>
+          <h3>Anuncia tus promociones y productos.</h3>
+          <p>El Menú QR te ayudara a anuciar sobre ofertas en comidas y bebidas, permitiendo a tus clientes estar
+            informados desde su teléfono, sin necesidad de tener que descargar una app.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="prices">
+    <div class="prices-header">
+      <h2>Precios del servicio</h2>
+      <p>El Menú QR representa una solución accesible, profesional y que ayuda a evitar la propagación del Covid 19.</p>
+    </div>
+    <div class="plans">
+      {% for plan in planes %}
+      <div class="plan">
+        <h1>{{ plan.name }}</h1>
+        <h2>{{ plan.price }}<span class="little-part">/ Año</span></h2>
+        {% for detalle in detalles %}
+        {% if detalle.plan_id.name == plan.name %}
+        <div class="plan-detail">
+          <img src="{% static 'core/img/check.png' %}">
+          <p>{{ detalle }}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <button class="btn contactar">Contactar</button>
+      </div>
       {% endfor %}
-    </article>
+    </div>
+  </div>
 
-  </section>
   <section class="restaurants-section ejemplos-section" id="ejemplos">
     <h2>EJEMPLOS</h2>
     <p>
@@ -257,6 +206,9 @@
     </article>
   </section>
   <hr class="hr-final">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/index.js' %}"></script>
 </body>
 
 </html>
