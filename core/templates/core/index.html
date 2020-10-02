@@ -5,6 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="/media/media/flaticonchanged.png" />
   <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
@@ -13,12 +14,15 @@
 
 <body>
   <nav>
+    <div>
+      <a href="#"><img src="{% static 'core/img/Logo-AID1.png' %}" width="60" id="logoAID"></a>
+    </div>
     <ul class="nav-items">
-      <li class="nav-item"><a href="#">Inicio</a></li>
-      <li class="nav-item"><a href="#">¿Qué es?</a></li>
-      <li class="nav-item"><a href="#">Precios</a></li>
-      <li class="nav-item"><a href="#">Nuestros clientes</a></li>
-      <li class="nav-item"><a href="#">Contácteno</a>s</li>
+      <li class="nav-item" id="iniciolink"><a href="#">Inicio</a></li>
+      <li class="nav-item" id="whatlink"><a href="#">¿Qué es?</a></li>
+      <li class="nav-item" id="priceslink"><a href="#">Precios</a></li>
+      <li class="nav-item" id="clientslink"><a href="#">Nuestros clientes</a></li>
+      <li class="nav-item" id="contactlink"><a href="#">Contáctenos</a></li>
     </ul>
   </nav>
   <div class="index">
@@ -46,7 +50,7 @@
     </div>
   </div>
 
-  <div class="section2">
+  <div class="section2" id="what">
     <h2>¿Por qué tener un menú digital?</h2>
     <p>El mundo ha cambiado y la tecnología ha avanzado, ya no necesitas repartir tu menú. <br>Tus clientes verán tus
       productos desde su celular.</p>
@@ -92,7 +96,7 @@
     </div>
   </div>
 
-  <div class="prices">
+  <div class="prices" id="prices">
     <div class="prices-header">
       <h2>Precios del servicio</h2>
       <p>El Menú QR representa una solución accesible, profesional y que ayuda a evitar la propagación del Covid 19.</p>
@@ -115,7 +119,8 @@
       {% endfor %}
     </div>
   </div>
-  <div class="examples">
+
+  <div class="examples" id="clients">
     <img src="{% static 'restaurants/img/dots.svg' %}" class="blue-dots">
     <img src="{% static 'restaurants/img/circles.svg' %}" class="circles">
     <div class="example1">
@@ -143,64 +148,31 @@
       {% endfor %}
     </div>
   </div>
-
-  <section class="restaurants-section" id="contactos">
-    <h2>CONTACTOS</h2>
-    <p>
-      Si tiene alguna consulta, necesita un presupuesto o quiere hacer una propuesta, rellene el formulario
-      <br> o llámenos, y le contestaremos lo antes posible.
-    </p>
-
-    <article class="features-article">
-      <div class="contacto-texto">
-        <h1>Desarrolla Tu Menú Virtual</h1>
-        <p>El Menú QR minimiza el contacto entre clientes y así evitas la propagación del COVID-19. No requiere
-          descargar ninguna aplicación y es muy fácil de usar.</p>
-        <h1>Contacto</h1>
-        <ul class="lista-contacto-contacto">
-          <li>
-            <i class="fas fa-phone"></i>
-            <a href="tel:+50578741494">+505 7874 1494</a>
-          </li>
-          <li>
-            <i class="far fa-envelope"></i>
-            <a href="mailto:info@ai-devs.com">info@ai-devs.com</a>
-          </li>
-        </ul>
-        <h1>Redes Sociales</h1>
-        <article class="contacto_redes-sociales">
-          <a href="https://www.facebook.com/AdvanceIDs" target="_blank">
-            <i class="fab fa-facebook-f contacto-facebook">
-
-            </i>
-          </a>
-
-          <a href="https://www.instagram.com/advancedidevs/" target="_blank">
-            <i class="fab fa-instagram contacto-instagram">
-
-            </i>
-          </a>
-          <a href="https://wa.me/50578741494" target="_blank">
-            <i class="fab fa-whatsapp contacto-whatsapp">
-
-            </i>
-          </a>
-          <!-- <p>© Copyright 2020. All Rights Reserved By  <a class="link-aid" href="https://ai-devs.com" target="__blank">Advanced Ideas Developers</a></p> -->
-        </article>
+  <div class="contact-us" id="contact">
+    <div class="contact-box1">
+      <div class="contact-header">
+        <img src="{% static 'core/img/substract-white.svg' %}" width="70">
+        <h2>Contáctenos</h2>
       </div>
-      <div>
-        <h2>Formulario De Contacto</h2>
-        <form method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <div class="form-actions">
-            <button class="boton-form" type="submit">Enviar</button>
-          </div>
-        </form>
+      <h1>Desarrolla tu Menú QR</h1>
+      <p>El menú QR minimiza el contacto entre los clientes y así evitas la propagación del Covid 19. No requiere
+        descargar ninguna aplicación y es muy fácil de usar. ¡Comienza hoy mismo con tu menú QR!</p>
+      <h2><a href="mailto:info@ai-devs.com"><i class="fas fa-envelope"></i> &nbsp;info@ai-devs.com</a></h2>
+      <div class="social-networks">
+        <a href="https://www.facebook.com/AdvanceIDs" target="_blank" class="fab fa-facebook-f"></a>
+        <a href="https://www.instagram.com/advancedidevs/" target="_blank" class="fab fa-instagram"></a>
       </div>
-    </article>
-  </section>
-  <hr class="hr-final">
+      <h5>Copyright & Design by <a href="https://www.ai-devs.com" class="aid">Advanced Ideas Developers</a></h5>
+    </div>
+
+    <div class="contact-box2">
+      <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="boton-form" type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
   <script src="{% static 'core/js/index.js' %}"></script>
