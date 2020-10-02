@@ -115,39 +115,34 @@
       {% endfor %}
     </div>
   </div>
-
-  <section class="restaurants-section ejemplos-section" id="ejemplos">
-    <h2>EJEMPLOS</h2>
-    <p>
-      En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu. <br>
-      Escanear los códigos QR que aparecen en las fotos.
-    </p>
-
-    <article class="restaurants-article">
-
-      {% for i in all %}
-      <section>
-        <h2>{{i.name}}</h2>
-        <div class="contenedor-qr">
-          <img class="restaurant-main-image" src="media/{{i.foto_restaurante}}" alt="foto-restaurante">
-          <a href="/restaurants/menu/{{i.link}}" target="__blank">
-            <img class="restaurant-secundary-image" src="media/{{i.foto_qr}}" alt="foto-qr">
-          </a>
+  <div class="examples">
+    <img src="{% static 'restaurants/img/dots.svg' %}" class="blue-dots">
+    <img src="{% static 'restaurants/img/circles.svg' %}" class="circles">
+    <div class="example1">
+      <div class="header-example">
+        <img src="{% static 'core/img/substract.svg' %}" width="70rem">
+        <h3>Nuestros Clientes</h3>
+      </div>
+      <div class="header-content">
+        <h1>Prueba el menú QR de algunos de nuestros clientes.</h1>
+        <p>En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu.
+          Escanear los códigos QR que aparecen en los cuadros.</p>
+      </div>
+    </div>
+    <div class="example2">
+      {% for rest in all %}
+      <div {% if forloop.first %} class="first" {% endif %}>
+        <div class="box-qr">
+          <div class="line-qr"></div>
+          <h2>{{ rest.name }}</h2>
+          <h4>Código QR</h4>
+          <img src="{{ rest.foto_qr.url }}" width="160">
+          <a href="#">Ver Más</a>
         </div>
-      </section>
+      </div>
       {% endfor %}
-
-    </article>
-  </section>
-
-  <article class="article-paralax">
-    <h3>MENU QR</h3>
-    <p>
-      Luchar contra el COVID-19, minimizar el riesgo de contacto <br>
-      entre tus clientes al habilitar menú virtual <nr>
-        ¡No requiere descargar ninguna apliación!
-    </p>
-  </article>
+    </div>
+  </div>
 
   <section class="restaurants-section" id="contactos">
     <h2>CONTACTOS</h2>
@@ -208,26 +203,7 @@
   <hr class="hr-final">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
-    <script src="{% static 'core/js/index.js' %}"></script>
+  <script src="{% static 'core/js/index.js' %}"></script>
 </body>
 
 </html>
-<!-- <nav class="navbar-general">
-        <ul>
-            <li>
-                <a href="#home">HOME</a>
-            </li>
-            <li>
-                <a href="#menu">MENÚ QR</a>
-            </li>
-            <li>
-                <a href="#precios">PRECIOS</a>
-            </li>
-            <li>
-                <a href="#ejemplos">EJEMPLOS</a>
-            </li>
-            <li>
-                <a href="#contactos">CONTACTOS</a>
-            </li>
-        </ul>
-    </nav> -->

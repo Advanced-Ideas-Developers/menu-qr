@@ -1,6 +1,6 @@
 $('.plan').hover(function(){
-  $(this).find('.btn').toggle(500);
+  $(this).find('.btn').slideDown();
 },function(){
-  $(this).find('.btn').toggle(500);
+  $(this).find('.btn').slideUp();
 }
 );

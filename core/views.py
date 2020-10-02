@@ -9,8 +9,7 @@ from .forms import ContactForm
 # Create your views here.
 
 def home(request):
-    restaurants = Restaurant.objects.values(
-        'name', 'foto_restaurante', 'foto_portada', 'link', 'foto_qr', 'id').filter(restaurant_test=True)
+    restaurants = Restaurant.objects.all().filter(restaurant_test=True)
     planes = Plan.objects.values('name', 'price')
     detalles_planes = PlanDetail.objects.select_related('plan_id')
     if request.method == 'GET':
