@@ -5,20 +5,31 @@
   font-family: "Poppins";
 }
 
+.menu-resp {
+  display: none;
+}
+
+.fas.fa-times{
+  display: none;
+}
+
 nav {
   position: fixed;
-  display: flex;
-  justify-content: space-between;
   background-color: transparent;
   width: 100%;
   z-index: 3;
 }
 
-nav img{
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav img {
   display: none;
 }
 
-nav div{
+.nav div {
   margin-left: 2rem;
 }
 
@@ -374,7 +385,7 @@ nav.scrolled {
   top: -9rem;
 }
 
-.circles{
+.circles {
   position: absolute;
   bottom: 4rem;
   left: 8rem;
@@ -438,17 +449,17 @@ nav.scrolled {
   border-radius: 22px;
 }
 
-.box-qr h2{
+.box-qr h2 {
   margin-bottom: 0.9rem;
 }
 
-.box-qr h4{
+.box-qr h4 {
   margin-bottom: 0.9rem;
   font-weight: 300;
   letter-spacing: 0.4rem;
 }
 
-.box-qr a{
+.box-qr a {
   padding: 0.7rem 1.5rem;
   margin-top: 1rem;
   background-color: #ef4c00;
@@ -457,56 +468,59 @@ nav.scrolled {
   text-decoration: none;
 }
 
-.contact-us{
+.contact-us {
   display: flex;
   background-color: #102733;
   color: white;
 }
 
-.contact-box1, .contact-box2{
+.contact-box1,
+.contact-box2 {
   width: 50vw;
 }
 
-.contact-header{
+.contact-header {
   display: flex;
   align-items: center;
   padding-top: 4rem;
   margin-left: 3rem;
 }
 
-.contact-header h2{
+.contact-header h2 {
   margin-left: 0.8rem;
 }
 
-.contact-box1 h1, .contact-box1 p, .contact-box1>h2{
+.contact-box1 h1,
+.contact-box1 p,
+.contact-box1 > h2 {
   margin-left: 3rem;
   margin-right: 6rem;
 }
 
-.contact-box1 h1{
+.contact-box1 h1 {
   font-size: 4rem;
   margin-top: 4rem;
 }
 
-.contact-box1 p{
+.contact-box1 p {
   margin-top: 2rem;
 }
 
-.contact-box1>h2{
+.contact-box1 > h2 {
   margin-top: 1rem;
 }
 
-.contact-box1 a{
+.contact-box1 a {
   text-decoration: none;
   color: white;
   transition: 0.6s color;
 }
 
-.contact-box1 a:hover{
+.contact-box1 a:hover {
   color: #ef4c00;
 }
 
-.social-networks{
+.social-networks {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
@@ -514,7 +528,7 @@ nav.scrolled {
   margin-right: 6rem;
 }
 
-.social-networks a{
+.social-networks a {
   text-align: center;
   width: 1.5rem;
   padding: 0.6rem;
@@ -524,35 +538,35 @@ nav.scrolled {
   margin-right: 1rem;
 }
 
-.contact-box1 h5{
+.contact-box1 h5 {
   margin-left: 3rem;
   margin-top: 3rem;
 }
 
-.aid{
+.aid {
   color: #00a1fa !important;
   transition: 0.6 color;
 }
 
-.aid:hover{
+.aid:hover {
   color: #ef4c00 !important;
 }
 
-.fab.fa-facebook-f:hover{
+.fab.fa-facebook-f:hover {
   color: #0088fb;
 }
 
-.fab.fa-instagram:hover{
+.fab.fa-instagram:hover {
   color: #ee5296;
 }
 
-.contact-box2{
+.contact-box2 {
   display: flex;
   padding: 12rem 0;
   justify-content: center;
 }
 
-.contact-box2 form{
+.contact-box2 form {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -590,7 +604,264 @@ textarea {
   font-size: 1.19rem;
   padding: 10px 16px;
   color: white;
-  background-color: #EF4C00;
+  background-color: #ef4c00;
   border: none;
   /* width: 63%; */
+}
+
+@media (max-width: 768px) {
+  nav {
+    /* display: none; */
+    background-color: white;
+    width: 100vw;
+    z-index: 11;
+    top: -35rem;
+    transition: all .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  .fas.fa-times{
+    display: block;
+  }
+
+  .menu-resp.scrolled{
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .expanded{
+    top: 0;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav img {
+    display: inline;
+  }
+
+  .nav ul {
+    flex-direction: column;
+  }
+
+  .fa-times {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #ef4c00;
+    font-size: 2rem;
+  }
+
+  .index {
+    height: auto;
+  }
+
+  .row-index {
+    flex-direction: column-reverse;
+  }
+
+  .circle {
+    top: -40rem;
+    left: -23rem;
+  }
+
+  .column1,
+  .column2 {
+    width: 100vw;
+    height: auto;
+  }
+
+  .column2 {
+    width: 90vw;
+    margin: 8.4rem auto 0 auto;
+    padding: 0;
+  }
+
+  .column1 {
+    margin-bottom: 6rem;
+  }
+
+  .buttons-index {
+    margin-bottom: 0;
+  }
+
+  .container-img {
+    margin: 2rem auto 0 auto;
+  }
+
+  .our-platform {
+    flex-direction: column;
+  }
+
+  .platform-header {
+    text-align: center;
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .prices-header p {
+    padding: 0 2rem;
+  }
+
+  .examples {
+    flex-direction: column;
+  }
+
+  .example1,
+  .example2 {
+    width: 100vw;
+  }
+
+  .example2 {
+    column-gap: 0;
+    padding: 0;
+  }
+
+  .contact-box1,
+  .contact-box2 {
+    width: 100vw;
+  }
+
+  .contact-us {
+    flex-direction: column;
+  }
+
+  .contact-box1 h1 {
+    font-size: 3.2rem;
+  }
+
+  .circles {
+    bottom: 2rem;
+    left: 3rem;
+  }
+
+  .menu-resp {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    color: #ef4c00;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  .menu-resp i {
+    padding: 1rem;
+  }
+}
+
+@media(max-width:425px){
+  .circle {
+    top: -20rem;
+    left: -10rem;
+  }
+
+  .container-img{
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .dots, .dots2{
+    width: 7rem;
+  }
+
+  .dots{
+    top: 1rem;
+    right: 0;
+  }
+
+  .dots2{
+    bottom: 1rem;
+  }
+
+  .QR-index{
+    width: 15rem;
+    top: 2rem;
+  }
+
+  .gradient-box{
+    width: 11rem;
+    height: 11rem;
+    left: 5rem;
+    top: 4rem;
+  }
+
+  .trapecio{
+    border-left: 10rem solid #102733;
+    border-top: 2rem solid transparent;
+    border-bottom: 2rem solid transparent;
+    height: 15rem;
+  }
+
+  .circle1{
+    width: 16rem;
+    height: 16rem;
+    left: -7rem;
+    top: 0rem;
+  }
+
+  .circle2{
+    width: 9rem;
+    height: 9rem;
+    top: 3.4rem;
+    left: -4rem;
+  }
+
+  .phoneQR{
+    width: 15rem;
+  }
+
+  .plans{
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .section2{
+    padding: 0 1rem;
+  }
+
+  .plan{
+    margin-bottom: 2rem;
+    margin: 1rem auto;
+  }
+
+  .header-content{
+    margin: 2rem;
+  }
+
+  .example2{
+    grid-template-columns: 100%;
+    grid-template-areas: 'first' 'second' 'third';
+  }
+
+  .circles{
+    display: none;
+  }
+
+  .contact-box1 h1{
+    margin: 2rem 2rem 0 2rem;
+  }
+
+  .contact-box1 p{
+    margin: 1rem 2rem 0 2rem;
+  }
+
+  .contact-box1>h2{
+    margin: 1rem 2rem 0 2rem;
+    text-align: center;
+  }
+
+  .social-networks{
+    margin: 2rem;
+  }
+
+  .contact-box2{
+    padding: 8rem 0;
+  }
+
+  .buttons-index{
+    text-align: center;
+  }
 }

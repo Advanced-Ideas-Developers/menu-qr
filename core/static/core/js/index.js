@@ -7,11 +7,14 @@ $('.plan').hover(function(){
 $(function () {
   $(document).scroll(function () {
     var $nav = $("nav");
-    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-    if($(this).scrollTop() > $nav.height()){
-      $('#logoAID').show(200);
-    }else{
-      $('#logoAID').hide();
+    $('.menu-resp').toggleClass('scrolled', $(this).scrollTop() > $('.menu-resp').height());
+    if(window.screen.width>768){
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+      if($(this).scrollTop() > $nav.height()){
+        $('#logoAID').show(200);
+      }else{
+        $('#logoAID').hide();
+      }
     }
   });
 });
@@ -33,3 +36,13 @@ $(".nav-item").click(function(e) {
   e.preventDefault(); 
   goToByScroll($(this).attr("id"));           
 });
+
+$(".fa-bars").click(function(e) {
+  //$("nav").slideDown(200);
+  $('nav').toggleClass('expanded');
+});
+
+$(".fa-times").click(function() {
+  //$("nav").slideUp(200);
+  $('nav').toggleClass('expanded');
+})

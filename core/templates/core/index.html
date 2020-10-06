@@ -13,17 +13,23 @@
 </head>
 
 <body>
-  <nav>
-    <div>
-      <a href="#"><img src="{% static 'core/img/Logo-AID1.png' %}" width="60" id="logoAID"></a>
+  <div class="menu-resp">
+    <i class="fas fa-bars"></i>
+  </div>
+  <nav class="slideUp">
+    <div class="nav">
+      <i class="fas fa-times"></i>
+      <div>
+        <a href="#"><img src="{% static 'core/img/Logo-AID1.png' %}" width="60" id="logoAID"></a>
+      </div>
+      <ul class="nav-items">
+        <li class="nav-item" id="iniciolink"><a href="#">Inicio</a></li>
+        <li class="nav-item" id="whatlink"><a href="#">¿Qué es?</a></li>
+        <li class="nav-item" id="priceslink"><a href="#">Precios</a></li>
+        <li class="nav-item" id="clientslink"><a href="#">Nuestros clientes</a></li>
+        <li class="nav-item" id="contactlink"><a href="#">Contáctenos</a></li>
+      </ul>
     </div>
-    <ul class="nav-items">
-      <li class="nav-item" id="iniciolink"><a href="#">Inicio</a></li>
-      <li class="nav-item" id="whatlink"><a href="#">¿Qué es?</a></li>
-      <li class="nav-item" id="priceslink"><a href="#">Precios</a></li>
-      <li class="nav-item" id="clientslink"><a href="#">Nuestros clientes</a></li>
-      <li class="nav-item" id="contactlink"><a href="#">Contáctenos</a></li>
-    </ul>
   </nav>
   <div class="index">
     <div class="circle"></div>
