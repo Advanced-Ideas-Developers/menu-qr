@@ -148,7 +148,7 @@
           <h2>{{ rest.name }}</h2>
           <h4>Código QR</h4>
           <img src="{{ rest.foto_qr.url }}" width="160">
-          <a href="{% url 'menu' rest.link %}">Ver Más</a>
+          <a target="__blank" href="{% url 'menu' rest.link %}">Ver Más</a>
         </div>
       </div>
       {% endfor %}
@@ -168,7 +168,7 @@
         <a href="https://www.facebook.com/AdvanceIDs" target="_blank" class="fab fa-facebook-f"></a>
         <a href="https://www.instagram.com/advancedidevs/" target="_blank" class="fab fa-instagram"></a>
       </div>
-      <h5>Copyright & Design by <a href="https://www.ai-devs.com" class="aid">Advanced Ideas Developers</a></h5>
+      <h5>Copyright & Design by <a target="__blank" href="https://www.ai-devs.com" class="aid">Advanced Ideas Developers</a></h5>
     </div>
 
     <div class="contact-box2">
