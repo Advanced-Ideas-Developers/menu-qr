@@ -23,10 +23,12 @@ nav {
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav img {
   display: none;
+  padding: 0.5rem;
 }
 
 .nav div {

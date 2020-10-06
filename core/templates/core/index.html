@@ -148,7 +148,7 @@
           <h2>{{ rest.name }}</h2>
           <h4>Código QR</h4>
           <img src="{{ rest.foto_qr.url }}" width="160">
-          <a href="#">Ver Más</a>
+          <a href="{% url 'menu' rest.link %}">Ver Más</a>
         </div>
       </div>
       {% endfor %}

@@ -46,3 +46,11 @@ $(".fa-times").click(function() {
   //$("nav").slideUp(200);
   $('nav').toggleClass('expanded');
 })
+
+$('.contact').click(function() {
+  goToByScroll("contactlink");
+});
+
+$('.test').click(function() {
+  goToByScroll("clientslink");
+});
