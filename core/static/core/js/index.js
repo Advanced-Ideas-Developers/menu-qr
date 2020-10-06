@@ -24,11 +24,17 @@ function goToByScroll(id){
   if(id === 'inicio'){
     $('html,body').animate({
       scrollTop: 0},
-      'slow');  
+      'slow');
+    if(window.screen.width < 728){
+      $('nav').toggleClass('expanded');
+    }
   }else{
     $('html,body').animate({
       scrollTop: $("#"+id).offset().top - 100},
       'slow');
+      if(window.screen.width < 728){
+        $('nav').toggleClass('expanded');
+      }
   }
 }
 
@@ -48,6 +54,10 @@ $(".fa-times").click(function() {
 })
 
 $('.contact').click(function() {
+  goToByScroll("contactlink");
+});
+
+$('.contactar').click(function() {
   goToByScroll("contactlink");
 });
 
