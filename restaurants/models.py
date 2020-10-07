@@ -53,7 +53,7 @@ class Restaurant(models.Model):
     def __str__(self):
         return self.name
 
-
+# falta comprobar esto 
 class Menu(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre', null=True)
     restaurant = models.OneToOneField(
