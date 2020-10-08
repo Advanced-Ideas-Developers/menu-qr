@@ -28,7 +28,7 @@ def home(request):
                     'from_email': from_email,
                     'message': message
                 }
-                html_message = render_to_string('general/email.html', context)
+                html_message = render_to_string('core/email/email.html', context)
                 send_mail('Mensaje de contacto Menús QR', message, from_email, [
                           'info@ai-devs.com'], html_message=html_message)
             except BadHeaderError:
