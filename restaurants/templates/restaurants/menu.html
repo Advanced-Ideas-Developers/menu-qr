@@ -36,7 +36,11 @@
     <hr>
     <div class="menu-items">
       {% for category in categories %}
-      <h3 style="font-weight: bolder; font-size: 1.8rem; margin: 2rem 0 ; text-transform: uppercase;">{{ category.category_show }}</h3>
+      <h3 style="font-weight: bolder; font-size: 1.8rem; margin: 2rem 0 ; text-transform: uppercase;">
+        {{ category.category_show }}</h3>
+      {% if category.description %}
+      <p style="margin-bottom: 2rem;">({{ category.description }})</p>
+      {% endif %}
       {% for product in products %}
       {% if product.category_id.id == category.id %}
       <div class="product">
