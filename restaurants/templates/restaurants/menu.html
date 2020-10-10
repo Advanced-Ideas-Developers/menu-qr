@@ -18,7 +18,7 @@
       <div class="line"></div>
       <img src="{{ restaurant.foto_portada_secundaria.url }}" class="logo">
       <h1>{{ restaurant.name }}</h1>
-      <p>{{ restaurant.description }}</p>
+      <p>{{ restaurant.description|safe }}</p>
       <div>
         <img src="{% static 'restaurants/img/star.svg' %}">
         <img src="{% static 'restaurants/img/star.svg' %}">
