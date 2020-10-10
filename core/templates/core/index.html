@@ -16,6 +16,11 @@
   <div class="menu-resp">
     <i class="fas fa-bars"></i>
   </div>
+  {% if 'success' in request.GET %}
+  <div class="modal">
+    <p>Se ha enviado tu mensaje. ¡Gracias por comunicarte con nosotros!</p>
+  </div>
+  {% endif %}
   <nav class="slideUp">
     <div class="nav">
       <i class="fas fa-times"></i>
@@ -111,7 +116,7 @@
       {% for plan in planes %}
       <div class="plan">
         <h1>{{ plan.name }}</h1>
-        <h2>{{ plan.price }}<span class="little-part">/ Año</span></h2>
+        <h2>${{ plan.price | floatformat:0 }}<span class="little-part">/ Año</span></h2>
         {% for detalle in detalles %}
         {% if detalle.plan_id.name == plan.name %}
         <div class="plan-detail">

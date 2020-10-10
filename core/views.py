@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.template.loader import render_to_string
@@ -33,7 +34,7 @@ def home(request):
                           'info@ai-devs.com'], html_message=html_message)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect('success')
+            return redirect(reverse('home') + '?success')
     context = {
         'all': restaurants,
         'planes': planes,

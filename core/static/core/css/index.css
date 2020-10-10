@@ -5,6 +5,17 @@
   font-family: "Poppins";
 }
 
+.modal{
+  position: fixed;
+  top: 5rem;
+  right: 3rem;
+  background-color: #24AE62;
+  padding: 1rem;
+  color: white;
+  border-radius: 10px;
+  z-index: 10;
+}
+
 .menu-resp {
   display: none;
 }

@@ -1,3 +1,5 @@
+$('.modal').delay(3000).fadeOut();
+
 $('.plan').hover(function(){
   $(this).find('.btn').slideDown();
 },function(){
