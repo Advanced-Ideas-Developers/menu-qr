@@ -53,7 +53,13 @@
           <h2>{{ product.product_name }}</h2>
           <p>{{ product.product_description }}</p>
         </div>
-        <p class="product-price">{{product.currency}} {{product.price}}</p>
+        <p class="product-price">
+          
+          {% if product.price > 0 %}
+            {{product.currency}} {{product.price}}
+          {% endif %}
+            
+        </p>
       </div>
       {% endif %}
       {% endfor %}
