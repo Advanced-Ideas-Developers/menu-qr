@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   margin: 0;
   font-family: "Poppins";
@@ -174,6 +176,12 @@ nav.scrolled {
 
 .buttons-index {
   margin-bottom: 8rem;
+}
+
+.buttons-index button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .btn {
@@ -878,4 +886,85 @@ textarea {
   .buttons-index{
     text-align: center;
   }
+}
+
+
+/* razones */
+
+.como-funciona{
+  text-align: center;
+  padding: 2.1rem 10rem;
+  min-height: 36rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+.como-funciona article {
+  padding: 2rem 1.5rem;
+  box-shadow: 7px 8px 16px #E5E5E5;
+  margin-top: 3rem;
+}
+
+.como-funciona article:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.como-funciona p{
+  color: #707070;
+}
+
+.como-funciona h2{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.razones{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 2rem 0rem;
+}
+
+.razones >*{
+  max-width: 20rem;
+}
+
+.razones article >*{
+  margin: 1rem 0rem;
+}
+
+.razones h1{
+  color: #EF4C00;
+  font-size: 3.6rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+.razones h3{
+  font-weight: 600;
+}
+
+@media(max-width:680px){
+  .como-funciona{
+    padding: 2.1rem 2.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .razones{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .razones >*{
+    max-width: 100%;
+  }
+  
+  .razones article >*{
+    margin: 1rem 0rem;
+  }
+
 }
