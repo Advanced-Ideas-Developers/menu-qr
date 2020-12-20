@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
   <title>Menús QR | AID</title>
 </head>
 
@@ -85,7 +86,7 @@
         </h1>
         <h3>Escanear el Código QR</h3>
         <p>
-          Escanear el código QR con la cámara de su celular. 
+          Escanear el código QR con la cámara de su celular.
         </p>
       </article>
       <article>
@@ -170,33 +171,37 @@
     </div>
   </div>
 
-  <div class="examples" id="clients">
-    <img src="{% static 'restaurants/img/dots.svg' %}" class="blue-dots">
-    <img src="{% static 'restaurants/img/circles.svg' %}" class="circles">
+  <div class="examples">
     <div class="example1">
-      <div class="header-example">
-        <h3>Nuestros Clientes</h3>
-      </div>
-      <div class="header-content">
-        <h1>Prueba el menú QR de algunos de nuestros clientes.</h1>
-        <p>En la siguiente galería encontrará algunos ejemplos de realizaciones de QR Menu.
-          Escanear los códigos QR que aparecen en los cuadros.</p>
-      </div>
+      <h2>Nuestros Clientes</h2>
+      <p>
+        Echa un vistazo a los Menú digitales de algunos <br>
+        de nuestros clientes.
+      </p>
     </div>
-    <div class="example2">
-      {% for rest in all %}
-      <div {% if forloop.first %} class="first" {% endif %}>
-        <div class="box-qr">
-          <div class="line-qr"></div>
-          <h2>{{ rest.name }}</h2>
-          <h4>Código QR</h4>
-          <img src="{{ rest.foto_qr.url }}" width="160">
-          <a target="__blank" href="{% url 'menu' rest.link %}">Ver Más</a>
-        </div>
+    <section class="splide-clientes" id="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for rest in all %}
+          <div {% if forloop.first %}  {% endif %} style="background-image: url('{{rest.foto_portada.url}}');" class="rest-slider splide__slide">
+              <article>
+                <h2>{{rest.clasification}}</h2>
+                <h1>{{ rest.name }}</h1>
+              </article>
+              <article>
+                <img src="{{ rest.foto_qr.url }}" width="160">
+                <h4>
+                  Escanea el código o <a href="{% url 'menu' rest.link %}" target="_blank">haz click</a>
+                </h4>
+              </article>
+          </div>
+          {% endfor %}
+        </ul>
+
       </div>
-      {% endfor %}
-    </div>
+    </section>
   </div>
+
   <div class="contact-us" id="contact">
     <div class="contact-box1">
       <div class="contact-header">
@@ -225,7 +230,19 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
   <script src="{% static 'core/js/index.js' %}"></script>
+  <script>
+    new Splide('#splide', {
+      direction: 'ttb',
+      height: '25rem',
+      breakpoints: {
+        '680': {
+          height: '30rem'
+        }
+      }
+    }).mount();
+  </script>
 </body>
 
 </html>

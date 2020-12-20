@@ -32,6 +32,7 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nombre')
     restaurant_test = models.BooleanField(default=False)
     description = models.TextField(default="", null=False)
+    clasification = models.CharField(max_length=50, default="Restaurante")
     foto_restaurante = models.ImageField(
         upload_to='fotos_restaurantes', default='path/to/my/default/image.jpg')
     foto_portada = models.ImageField(
