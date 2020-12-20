@@ -217,6 +217,7 @@
     flex-direction: column;
     text-align: center;
     padding: 2rem 0rem;
+    height: 81vh;
   }
 
   .banner-portada .logo{
@@ -236,4 +237,5 @@
   .product-price{
     float: right;
   }
+  
 }
