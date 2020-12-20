@@ -158,8 +158,8 @@
 .banner-portada .logo{
   margin-right: 4.2rem;
   border-radius: 50%;
-  padding: 1.5rem;
-  background-color: #fff;
+  border: 7px solid white;
+  border-radius: 50%;
 }
 
 .banner-portada p{
