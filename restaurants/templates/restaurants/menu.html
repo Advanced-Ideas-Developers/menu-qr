@@ -14,60 +14,57 @@
 
 <body>
   <div class="banner-portada">
-    <div class="info-restaurante">
-      <div class="line"></div>
-      <img src="{{ restaurant.foto_portada_secundaria.url }}" class="logo">
+    <div class="line"></div>
+    <img src="{{ restaurant.foto_portada_secundaria.url }}" class="logo">
+    <div>
+      <h3>{{restaurant.clasification}}</h3>
       <h1>{{ restaurant.name }}</h1>
       <p>{{ restaurant.description|safe }}</p>
-      <div>
-        <img src="{% static 'restaurants/img/star.svg' %}">
-        <img src="{% static 'restaurants/img/star.svg' %}">
-        <img src="{% static 'restaurants/img/star.svg' %}">
-        <img src="{% static 'restaurants/img/star.svg' %}">
-        <img src="{% static 'restaurants/img/star.svg' %}">
-      </div>
+    </div>
+    <div class="estrellitas">
+      <img src="{% static 'restaurants/img/star.svg' %}">
+      <img src="{% static 'restaurants/img/star.svg' %}">
+      <img src="{% static 'restaurants/img/star.svg' %}">
+      <img src="{% static 'restaurants/img/star.svg' %}">
+      <img src="{% static 'restaurants/img/star.svg' %}">
     </div>
   </div>
 
   <div class="container-menu">
     <div class="menu-header">
-      <h2>Menú</h2>
+      <h2>Menú Digital</h2>
     </div>
-    <hr>
     <div class="menu-items">
       {% for category in categories %}
-      <h3 style="font-weight: bolder; font-size: 1.8rem; margin: 2rem 0 ; text-transform: uppercase;">
-        {{ category.category_show }}</h3>
-      {% if category.description %}
-      <p style="margin-bottom: 2rem;">({{ category.description }})</p>
-      {% endif %}
-      {% for product in products %}
-      {% if product.category_id.id == category.id %}
-      <div class="product">
-        {% if product.product_image != 'path/to/my/default/image.jpg' %}
-        <img src="{{ product.product_image.url }}" class="product-img">
-        {% else %}
-        <p></p>
+        <h3 style="font-weight: bolder; font-size: 1.8rem; margin: 2rem 0 ; text-transform: uppercase;">
+          {{ category.category_show }}</h3>
+        {% if category.description %}
+          <p style="margin-bottom: 2rem;">({{ category.description }})</p>
         {% endif %}
-        <div class="product-detail">
-          <h2>{{ product.product_name }}</h2>
-          <p>{{ product.product_description }}</p>
-        </div>
-        <p class="product-price">
-          
-          {% if product.price > 0 %}
-            {{product.currency}} {{product.price}}
+        {% for product in products %}
+          {% if product.category_id.id == category.id %}
+          <div class="product">
+            {% if product.product_image != 'path/to/my/default/image.jpg' %}
+            <img src="{{ product.product_image.url }}" class="product-img">
+            {% else %}
+            <p></p>
+            {% endif %}
+            <div class="product-detail">
+              <h2>{{ product.product_name }}</h2>
+              <p>{{ product.description }}</p>
+            </div>
+            <p class="product-price">
+
+              {% if product.price > 0 %}
+              {{product.currency}} {{product.price}}
+              {% endif %}
+
+            </p>
+          </div>
           {% endif %}
-            
-        </p>
-      </div>
-      {% endif %}
-      {% endfor %}
+        {% endfor %}
       {% endfor %}
     </div>
-    <img src="{% static 'restaurants/img/circles.svg' %}" class="circles">
-    <img src="{% static 'restaurants/img/circles.svg' %}" class="circles2">
-    <img src="{% static 'restaurants/img/dots.svg' %}" class="dots">
   </div>
 
   <style>

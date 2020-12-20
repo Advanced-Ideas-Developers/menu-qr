@@ -6,10 +6,6 @@
   font-family: 'Poppins';
 }
 
-body{
-  background-color:#F8F8F8;
-}
-
 .banner-portada {
   position: relative;
   width: 100vw;
@@ -19,59 +15,19 @@ body{
   background-size: cover;
 }
 
-.line{
-  background-color: #FF521C;
-  width: 8px;
-  height: 40px;
-  margin: 0 auto;
-}
-
-.info-restaurante {
-  position: absolute;
-  background-color: #102733;
-  width: 20rem;
-  min-height: 20rem;
-  padding: 2rem;
-  padding-top: 0;
-  color: white;
-  right: 55px;
-  bottom: -260px;
-  text-align: center;
-  border-radius: 25px;
-  border: 1px transparent solid;
-}
-
-.info-restaurante h1{
-  padding-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 2.2rem;
-  line-height: 2.6rem;
-}
-
-.info-restaurante p{
-  text-align: left;
-  line-height: 1.2rem;
-}
-
-.info-restaurante img{
-  width: 20px;
-  margin-top: 1.3rem;
-}
-
 .container-menu{
   position: relative;
-  margin: 20rem 5rem 6rem 5rem;
+  margin: 9rem 5rem 0rem 5rem;
   min-height: 50rem;
-  padding: 2rem;
+  padding: 0rem 2rem;
   padding-bottom: 12rem;
-  box-shadow: 9px 10px 7px -1px rgba(173,173,173,1);
   background-color: white;
 }
 
 .container-menu h2{
   text-align: center;
-  text-transform: uppercase;
   font-size: 3rem;
+  color: #172433;
 }
 
 .container-menu hr{
@@ -102,10 +58,6 @@ body{
 
 .logo{
   width: 10rem !important;
-}
-
-.menu-header h2{
-  margin: 4rem auto 0 auto;
 }
 
 .product{
@@ -179,5 +131,109 @@ body{
   .container-menu{
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+
+/* Banner portada v2.0 */
+
+.banner-portada{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.banner-portada .estrellitas img{
+  max-width: 1.5rem;
+  margin-right: 1rem;
+}
+
+.banner-portada .estrellitas{
+  position: absolute;
+  right: 6rem;
+  bottom: 4rem;
+}
+
+.banner-portada .logo{
+  margin-right: 4.2rem;
+  border-radius: 50%;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.banner-portada p{
+  max-width: 50%;
+}
+
+.banner-portada h1, .banner-portada h2, .banner-portada p{
+  color: white;
+}
+
+.banner-portada h3{
+  color: #EF4C00;
+}
+
+.banner-portada::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.banner-portada *{
+  z-index: 2;
+}
+
+.menu-header{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 89%;
+  top: -8rem;
+}
+
+.menu-header h2{
+  border: 2px solid #707070;
+  padding: 1rem 4rem;
+  width: 30%;
+  background-color: white;
+  z-index: 3;
+  color: #172433;
+  margin-top: -3rem;
+  font-size: 2.1rem;
+}
+
+.logo{
+  margin-left: 11rem;
+}
+
+@media(max-width:680px){
+  .banner-portada{
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0rem;
+  }
+
+  .banner-portada .logo{
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  .banner-portada h3{
+    margin-bottom: 1rem;
+  }
+
+  .banner-portada p{
+    max-width: none;
+    padding: 2rem;
+  }
+
+  .product-price{
+    float: right;
   }
 }
