@@ -14,6 +14,11 @@
 
 <body>
   <div class="banner-portada">
+    
+    {% if restaurant.restaurant_test == True %}
+      <i class="fas fa-long-arrow-alt-left flecha-regresar" id="goBack"></i>
+    {% endif %}
+      
     <div class="line"></div>
     <img src="{{ restaurant.foto_portada_secundaria.url }}" class="logo">
     <div>
@@ -72,6 +77,13 @@
       background-image: url('{{restaurant.foto_portada.url}}');
     }
   </style>
+  <script>
+    'use strict';
+    document.getElementById('goBack').addEventListener('click', ()=>{
+      window.location.replace('/')
+    })
+  </script>
+
 
 </body>
 

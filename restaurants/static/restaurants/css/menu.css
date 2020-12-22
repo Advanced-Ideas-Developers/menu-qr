@@ -244,3 +244,28 @@
   }
   
 }
+
+/* flecha regresar */
+
+.flecha-regresar{
+  color: #EF4C00;
+  font-size: 5rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.flecha-regresar:hover{
+  cursor: pointer;
+  /* color:  #fff000; */
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+@media(max-width: 680px){
+  .flecha-regresar{
+    font-size: 4rem;
+    top: 0rem;
+    left: 1.2rem;
+  }
+}
