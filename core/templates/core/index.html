@@ -228,6 +228,10 @@
       </form>
     </div>
   </div>
+
+  <!-- Item for scroll top -->
+  <i class="fas fa-arrow-up to-top" id="toTop"></i>
+
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
@@ -242,6 +246,18 @@
         }
       }
     }).mount();
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop()) {
+            $('#toTop').fadeIn();
+        } else {
+            $('#toTop').fadeOut();
+        }
+    });
+
+    $("#toTop").click(function() {
+        $("html, body").animate({scrollTop: 0}, 1000);
+    });
   </script>
 </body>
 
