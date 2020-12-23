@@ -1079,3 +1079,15 @@ textarea {
     bottom: 2rem;
   }
 }
+
+/* taza header */
+
+.logo-header{
+  height: 5rem;
+}
+
+@media(max-width:680px){
+  .logo-header{
+    height: 6rem;
+  }
+}
