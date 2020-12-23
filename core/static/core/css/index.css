@@ -883,6 +883,12 @@ textarea {
   .buttons-index {
     text-align: center;
   }
+
+  .QR-title {
+    color: #102733;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
 }
 
 
