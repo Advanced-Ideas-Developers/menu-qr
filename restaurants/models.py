@@ -34,13 +34,13 @@ class Restaurant(models.Model):
     description = models.TextField(default="", null=False)
     clasification = models.CharField(max_length=50, default="Restaurante")
     foto_restaurante = models.ImageField(
-        upload_to='fotos_restaurantes', default='path/to/my/default/image.jpg')
+        upload_to='fotos_restaurantes', default='/default_photos/403_error.jpg')
     foto_portada = models.ImageField(
-        upload_to='fotos_portadas', default='path/to/my/default/image.jpg')
+        upload_to='fotos_portadas', default='/default_photos/403_error.jpg')
     foto_portada_secundaria = models.ImageField(
-        upload_to='fotos_portadas', default='path/to/my/default/image.jpg')
+        upload_to='fotos_portadas', default='/default_photos/403_error.jpg')
     foto_qr = models.ImageField(
-        upload_to="qrs", default='path/to/my/default/image.jpg')
+        upload_to="qrs", default='/default_photos/403_error.jpg')
     link = models.TextField(default="#", verbose_name='link')
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
@@ -73,6 +73,8 @@ class Category(models.Model):
         max_length=50, verbose_name='Nombre de Categoría')
     category_show = models.CharField(
         max_length=50, verbose_name='Nombre de categoría a mostrar', null=True)
+    image = models.ImageField(
+        upload_to='fotos_categorias', default='/default_photos/403_error.jpg')
     description = models.TextField(verbose_name='Descripción', null=True, blank=True)
     menu_id = models.ForeignKey(
         'Menu', on_delete=models.CASCADE, verbose_name='Menú', null=True)
@@ -98,7 +100,7 @@ class Product(models.Model):
     currency = models.CharField(
         max_length=50, verbose_name='Moneda', choices=currency, default="C$")
     product_image = models.ImageField(
-        upload_to='products', default='path/to/my/default/image.jpg')
+        upload_to='products', default='/default_photos/403_error.jpg')
     created_at = models.DateField(
         auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateField(
