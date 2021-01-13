@@ -21,11 +21,17 @@ body{
 
 .container-menu{
   position: relative;
-  margin: 9rem 5rem 0rem 5rem;
+  margin: 9rem 0rem 0rem 5rem;
   min-height: 50rem;
   padding: 0rem 2rem;
   padding-bottom: 12rem;
   background-color: white;
+}
+
+@media (min-width: 1600px) {
+  .container-menu{
+    margin: 9rem 5rem 0rem 5rem;
+  }
 }
 
 .container-menu h2{
@@ -263,6 +269,8 @@ body{
 .menu-items > article{
   display: flex;
   margin-bottom: 6rem;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .menu-items > article >*{
@@ -270,9 +278,8 @@ body{
 }
 
 .menu-items > article img{
-  height: 22rem;
-  width: auto;
-  /* flex: 1; */
+  width: 35rem;
+  height: auto;
 }
 
 .category-description{
